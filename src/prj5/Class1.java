@@ -7,6 +7,7 @@ public class Class1 {
     }
     
     public static String getMessage() {
+        hjkhubu
         return "Hello world";
     }
 }
