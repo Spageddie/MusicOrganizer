@@ -7,6 +7,15 @@ public class Data {
     private LinkedList<Song> songList;
 
     public Data(String songFileName, String surveyFileName) {
+        hobbyList
+    
+        
+        public LinkedList<Glyph> getHobbyList() {
+            
+            return hobbyList;
+        }
+      
+       
         
     }
 
