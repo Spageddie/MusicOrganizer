@@ -1,12 +1,12 @@
 package prj5;
 
-public class Data {
+public class MergeData {
     private LinkedList<Glyph> hobbyList;
     private LinkedList<Glyph> majorList;
     private LinkedList<Glyph> regionList;
     private LinkedList<Song> songList;
 
-    public Data(String songFileName, String surveyFileName) {
+    public MergeData(String songFileName, String surveyFileName) {
         hobbyList
     
         
