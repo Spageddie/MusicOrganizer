@@ -55,7 +55,8 @@ public class LinkedListTest extends TestCase{
         
     }
     public void testToString() {
-        
+        System.out.println(listCinA.toString());
+        System.out.println(listA.toString());
     }
     public void testToArray() {
         

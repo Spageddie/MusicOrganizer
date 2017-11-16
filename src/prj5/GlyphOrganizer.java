@@ -4,33 +4,41 @@ public class GlyphOrganizer {
     private LinkedList<LinkedList> hobbyTwoDimensional;
     private LinkedList<LinkedList> majorTwoDimensional;
     private LinkedList<LinkedList> regionTwoDimensional;
-    private LinkedList hobbyList;
-    private LinkedList majorList;
-    private LinkedList regionList;
+    public GlyphOrganizer() {
+        hobbyTwoDimensional = null;
+        majorTwoDimensional = null;
+        regionTwoDimensional = null;
+    }
     public GlyphOrganizer(LinkedList h, LinkedList m, LinkedList r) {
-        hobbyList = h;
-        majorList = m;
-        regionList = r;
+        hobbyTwoDimensional = this.organizeHobby(h);
+        majorTwoDimensional = this.organizeMajor(m);
+        regionTwoDimensional = this.organizeRegion(r);
     }
-    public void organizeHobby() {
+    public LinkedList<LinkedList> organizeHobby(LinkedList h) {
+        //sort LinkedList h by song using h = this.sortBySong(h);
+        //Once h is sorted make a linked list for each song 
+        //then add the linked list to the hobbyTwoDimensional using add() method
+        //LinkedList<LinkedList> should be sorted by song with 
+        //all hobbies as the inner linked lists
+        return hobbyTwoDimensional;
         
     }
-    public void organizeMajor() {
-        
+    public LinkedList<LinkedList> organizeMajor(LinkedList m) {
+        return majorTwoDimensional;
     }
-    public void organizeRegion() {
-        
+    public LinkedList<LinkedList> organizeRegion(LinkedList r) {
+        return regionTwoDimensional;
     }
     public void sortBySong(LinkedList list) {
         Node currentNode = list.head;
-        Glyph [] result = (Glyph[])list.toArray();
+        Object [] result = list.toArray();
         for(int i=0; i<result.length; i++) {
-            Glyph min = result[i];
+            Object min = result[i];
             for (int j=0; j<result.length; j++) {
-                if((min.getSong().getTitle()).compareTo(result[j].getSong().getTitle())>1) {
+                if((((Glyph)min).getSong().getTitle()).compareTo(((Glyph)result[j]).getSong().getTitle())>1) {
                     min = result[j];
                 }
-                Glyph temp = min;
+                Glyph temp = (Glyph)min;
                 result[j] = result[i];
                 result[i] = temp;
             }

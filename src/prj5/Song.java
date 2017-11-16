@@ -5,7 +5,6 @@ public class Song {
     private String artist;
     private String year;
     private String genre;
-    private int index;
     public Song(String title, String artist, String year, String genre) {
         this.title = title;
         this.artist = artist;

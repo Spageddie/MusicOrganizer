@@ -23,6 +23,11 @@ public class Glyph {
     public String getRepresentation() {
         return representation;
     }
+    public String toString() {
+        return "";
+    }
+    
+
     
 
 }
