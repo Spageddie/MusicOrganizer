@@ -9,8 +9,24 @@ package prj5;
  *            generic type for LinkedList
  */
 public interface LinkedInterface<T> {
+    /**
+     * Removes all items from list
+     */
     public void clear();
+    /**
+     * Checks if list is empty
+     * @return Returns true if list is empty
+     */
     public boolean isEmpty();
-    public void add();
-    public T remove();
+    /**
+     * Adds an item to the list
+     * @param the generic you are adding to list
+     */
+    public void add(T anEntry);
+    /**
+     * Removes the specified item from the lsit
+     * @param the generic you are removing from list
+     * @return the generic you removed
+     */
+    public T remove(T anEntry);
 }
