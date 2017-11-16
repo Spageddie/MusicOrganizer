@@ -5,11 +5,11 @@ public class Glyph {
     private Song song;
     private double heard;
     private double like;
-    public Glyph(String r, Song s, double h, double l) {
-        representation = r;
-        song = s;
-        heard = h;
-        like = l;
+    public Glyph(String specificRepresentation, Song songName, double heardPercentage, double likedPercentage) {
+        representation = specificRepresentation;
+        song = songName;
+        heard = heardPercentage;
+        like = likedPercentage;
     }
     public double getHeard() {
         return heard;
