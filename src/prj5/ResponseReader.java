@@ -10,13 +10,14 @@ public class ResponseReader {
     private LinkedList<String> hasHeardList;
     private LinkedList<String> doesLikeList;
     public static int NUMBER_OF_SONGS = 46;
-
+    private LinkedList<Song> songList;
+    private LinkedList<Response> responseList;
 
     public ResponseReader(String responsesFileName, String songListFileName) 
         throws FileNotFoundException, ParseException{
         
-        LinkedList<Song> songList = new LinkedList<Song>();
-        LinkedList<Response> responseList = new LinkedList<Response>();
+        songList = new LinkedList<Song>();
+        responseList = new LinkedList<Response>();
 
         if (responsesFileName == null) {
             throw new IllegalArgumentException();
@@ -80,6 +81,12 @@ public class ResponseReader {
         scan.close();
         return songs;
         
+    }
+    public LinkedList<Song> getSongList(){
+        return songList;
+    }
+    public LinkedList<Response> getResponseList(){
+        return responseList;
     }
 
 }
