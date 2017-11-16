@@ -44,5 +44,8 @@ public class Node<T> {
     public T getData() {
         return this.data;
     }
+    public void setData(T anEntry) {
+        data = anEntry;
+    }
 
 }

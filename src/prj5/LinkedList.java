@@ -2,7 +2,7 @@ package prj5;
 
 
 public class LinkedList<T> {
-    private Node<T> head;
+    protected Node<T> head;
     private int size;
     public LinkedList() {
         head = null;
