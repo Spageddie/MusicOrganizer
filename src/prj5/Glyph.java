@@ -24,6 +24,7 @@ public class Glyph {
         return representation;
     }
     public String toString() {
+        StringBuilder builder = new StringBuilder();
         return "";
     }
     
