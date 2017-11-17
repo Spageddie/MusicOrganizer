@@ -3,8 +3,13 @@ package prj5;
 import java.io.File;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
-
-
+/**
+ * Class that reads the file data
+ * @author Eddie Dean
+ * @author Matthew Marquez (mmarquez)
+ * @version 2017.11.16
+ *
+ */
 public class ResponseReader {
 
     private LinkedList<String> hasHeardList;
@@ -13,9 +18,17 @@ public class ResponseReader {
     private LinkedList<Song> songList;
     private LinkedList<Response> responseList;
 
-    public ResponseReader(String responsesFileName, String songListFileName) 
-        throws FileNotFoundException
-    {
+    /**
+     * Construtor method for ResponseReader
+     * @param responsesFileName
+     *      file name for student responses
+     * @param songListFileName
+     *      file name for songs
+     * @throws FileNotFoundException
+     *      in case file not found
+     */
+    public ResponseReader(String responsesFileName, String songListFileName)
+        throws FileNotFoundException {
 
         songList = new LinkedList<Song>();
         responseList = new LinkedList<Response>();
@@ -31,10 +44,15 @@ public class ResponseReader {
 
     }
 
-
-
-    public LinkedList<Response> readResponses(String fileName) throws FileNotFoundException 
-    {
+    /**
+     * Method to read responses of students
+     * @param fileName
+     *      the student responses file
+     * @return linked list containing all responses
+     * @throws FileNotFoundException
+     */
+    public LinkedList<Response> readResponses(String fileName)
+        throws FileNotFoundException {
         LinkedList<Response> responses = new LinkedList<Response>();
         if (fileName == null) {
             throw new FileNotFoundException();
@@ -44,10 +62,9 @@ public class ResponseReader {
         scan.nextLine();
         while (scan.hasNextLine()) {
             String line = scan.nextLine();
-            String [] strings  = line.split("\\s*,\\s*");
+            String[] strings = line.split("\\s*,\\s*");
 
             if (strings.length > 50) {
-
 
                 String id = strings[0];
                 String date = strings[1];
@@ -55,15 +72,14 @@ public class ResponseReader {
                 String region = strings[3];
                 String hobby = strings[4];
 
-                for (int i = 5; i <= 2*NUMBER_OF_SONGS + 5; i = i + 2) {
-                    scanTwoLines(strings[i], strings[i+1]);
+                for (int i = 5; i <= 2 * NUMBER_OF_SONGS + 5; i = i + 2) {
+                    scanTwoLines(strings[i], strings[i + 1]);
                 }
-                responses.add(new Response(id, date, major, region, hobby, hasHeardList, doesLikeList));
-
+                responses.add(new Response(id, date, major, region, hobby,
+                    hasHeardList, doesLikeList));
 
             }
         }
-
 
         scan.close();
         System.out.println(responses.toString());
@@ -71,7 +87,13 @@ public class ResponseReader {
 
     }
 
-
+    /**
+     * helper method that scans two lines 
+     * @param firstline
+     *      first line of responses
+     * @param secondline
+     *      second line of responses
+     */
     private void scanTwoLines(String firstline, String secondline) {
         hasHeardList = new LinkedList<String>();
         doesLikeList = new LinkedList<String>();
@@ -80,17 +102,21 @@ public class ResponseReader {
 
     }
 
-
-
-
-    public LinkedList<Song> readSongs(String fileName) 
+    /**
+     * Reads the song file and puts into list
+     * @param fileName
+     *      song file name
+     * @return linkedlist of songs
+     * @throws FileNotFoundException
+     */
+    public LinkedList<Song> readSongs(String fileName)
         throws FileNotFoundException {
 
         LinkedList<Song> songs = new LinkedList<Song>();
         if (fileName == null) {
             throw new FileNotFoundException();
         }
-        
+
         Scanner scan = new Scanner(new File(fileName));
         scan.nextLine();
         while (scan.hasNextLine()) {
@@ -103,15 +129,27 @@ public class ResponseReader {
             songs.add(new Song(songName, artist, year, genre));
         }
         scan.close();
-        //System.out.println(songs.toString());
-        //System.out.println(songs.size());
+        // System.out.println(songs.toString());
+        // System.out.println(songs.size());
         return songs;
     }
-    public LinkedList<Song> getSongList(){
+
+    /**
+     * Getter method for songList
+     * @return songList
+     *      List containing all songs
+     */
+    public LinkedList<Song> getSongList() {
         return songList;
 
     }
-    public LinkedList<Response> getResponseList(){
+
+    /**
+     * Getter method for responseList
+     * @return responseList
+     *      list containing all responses
+     */
+    public LinkedList<Response> getResponseList() {
         return responseList;
     }
 

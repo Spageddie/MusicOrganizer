@@ -1,5 +1,12 @@
 package prj5;
 
+/**
+ * Turns the linked list of responses and linked list of songs
+ * into three linked lists of glyphs for representation
+ * 
+ * @author matth
+ *
+ */
 public class MergeData {
     private LinkedList<Glyph> hobbyList;
     private LinkedList<Glyph> majorList;
@@ -9,6 +16,15 @@ public class MergeData {
     private LinkedList<String> regions = new LinkedList<String>();
 
 
+    /**
+     * Constructor for MergeData
+     * 
+     * @param r
+     *            LinkedList of responses
+     * @param s
+     *            LinkedList of songs
+     */
+    /*
     public MergeData(LinkedList<Response> r, LinkedList<Song> s) {
         makeLists();
         LinkedList<Double> readHeardPercent = new LinkedList<Double>();
@@ -36,12 +52,12 @@ public class MergeData {
         LinkedList<Double> outHeardPercent = new LinkedList<Double>();
         LinkedList<Double> outLikePercent = new LinkedList<Double>();
         int count = 0;
-        //System.out.println(r.size());
+        // System.out.println(r.size());
         // for every song (60)
         for (int j = 0; j < s.size(); j++) {
-            //System.out.println(j);
+            // System.out.println(j);
 
-            //System.out.println(count);
+            // System.out.println(count);
             count++;
             double readHeardCount = 0;
             double readLikeCount = 0;
@@ -148,8 +164,8 @@ public class MergeData {
                     }
                     if (r.get(i).getMajor().equals("Computer Science")) {
 
-                        //System.out.println(r.get(i).getHeardSongList().get(j)
-                            //.toString());
+                        // System.out.println(r.get(i).getHeardSongList().get(j)
+                        // .toString());
                         if (r.get(i).getHeardSongList().get(j).equals("Yes")) {
                             csHeardCount++;
 
@@ -315,8 +331,10 @@ public class MergeData {
         }
 
     }
-
-
+    */
+    /**
+     * Makes lists of all possible representations
+     */
     private void makeLists() {
         hobbies.add("art");
         hobbies.add("reading");
@@ -332,23 +350,35 @@ public class MergeData {
         regions.add("Outside of United States");
     }
 
-
+    /**
+     * Getter for hobbyList
+     * @return hobbyList
+     */
     public LinkedList<Glyph> getHobbyGlyphs() {
         return hobbyList;
 
     }
 
-
+    /**
+     * Getter for majorList
+     * @return majorList
+     */
     public LinkedList<Glyph> getMajorGlyphs() {
         return majorList;
     }
 
-
+    /**
+     * Getter for regionList
+     * @return regionList
+     */
     public LinkedList<Glyph> getRegionGlyphs() {
         return regionList;
     }
 
-
+    /**
+     *  Represents MergeData as a string
+     *  @return representation of data
+     */
     public String toString() {
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < hobbyList.size(); i++) {

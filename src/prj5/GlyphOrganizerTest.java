@@ -1,8 +1,17 @@
 package prj5;
 import student.TestCase;
+/**
+ * Test class for glyphOrganizer
+ * @author Matthew Marquez (mmarquez)
+ * @author Eddie Dean
+ *
+ */
 public class GlyphOrganizerTest extends TestCase{
     private LinkedList<Glyph> list1;
     private GlyphOrganizer organizer;
+    /**
+     * Sets up the test cases
+     */
     public void setUp() {
         organizer = new GlyphOrganizer();
         list1 = new LinkedList<Glyph>();
@@ -19,24 +28,6 @@ public class GlyphOrganizerTest extends TestCase{
         list1.add(glyph3);
         list1.add(glyph4);
     }
-    public void testOrganizeHobby() {
-        
-    }
-    public void testOrganizeMajor() {
-        
-    }
-    public void testOrganizeRegion(){
-        
-    }
-    public void testSortBySong() {
-        organizer.sortBySong(list1);
-        System.out.println(list1.toString());
-    }
-    public void testGetHobby() {
-        
-    }
-    public void testGetMajor() {
-        
-    }
+    
 
 }
