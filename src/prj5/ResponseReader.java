@@ -42,7 +42,6 @@ public class ResponseReader {
 
         Scanner scan = new Scanner(new File(fileName));
         scan.nextLine();
-        scan.nextLine();
         while (scan.hasNextLine()) {
             String line = scan.nextLine();
             String [] strings  = line.split("\\s*,\\s*");
@@ -67,6 +66,7 @@ public class ResponseReader {
 
 
         scan.close();
+        System.out.println(responses.toString());
         return responses;
 
     }
@@ -90,8 +90,9 @@ public class ResponseReader {
         if (fileName == null) {
             throw new FileNotFoundException();
         }
-
+        
         Scanner scan = new Scanner(new File(fileName));
+        scan.nextLine();
         while (scan.hasNextLine()) {
             String line = scan.nextLine();
             String[] strings = line.split("\\s*,\\s*");
@@ -102,6 +103,8 @@ public class ResponseReader {
             songs.add(new Song(songName, artist, year, genre));
         }
         scan.close();
+        //System.out.println(songs.toString());
+        //System.out.println(songs.size());
         return songs;
     }
     public LinkedList<Song> getSongList(){

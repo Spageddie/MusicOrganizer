@@ -88,4 +88,12 @@ public class Song {
     public void setGenre(String genre) {
         this.genre = genre;
     }
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(title+" ");
+        builder.append(artist+" ");
+        builder.append(year +" ");
+        builder.append(genre+" ");
+        return builder.toString();
+    }
 }

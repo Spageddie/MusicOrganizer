@@ -51,4 +51,15 @@ public class Response {
     public LinkedList<String> getLikesSongList() {
         return likesSong;
     }
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(id+ " ");
+        builder.append(date+" ");
+        builder.append(major+" ");
+        builder.append(hobby+" ");
+        builder.append(region+" ");
+        builder.append(hasHeardSong.toString());
+        builder.append(likesSong.toString());
+        return builder.toString();
+    }
 }

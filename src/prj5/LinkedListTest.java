@@ -13,6 +13,9 @@ public class LinkedListTest extends TestCase{
     private LinkedList<String> listCinA;
     private LinkedList<String> listD;
     
+    /**
+     * Sets up test cases
+     */
     public void setUp() {
         listA = new LinkedList<LinkedList>();
         listBinA = new LinkedList<String>();
@@ -30,17 +33,28 @@ public class LinkedListTest extends TestCase{
         listA.add(listBinA);
         listA.add(listCinA);
     }
+    /**
+     * Tests size() method
+     */
     public void testSize() {
         assertEquals(0, listD.size());
         assertEquals(3, listBinA.size());
     }
+    /**
+     * Tests clear() method
+     */
     public void testClear() {
         assertFalse(listCinA.isEmpty());
         listCinA.clear();
         assertTrue(listCinA.isEmpty());
     }
+    /**
+     * Tests isEmpty() method
+     */
     public void testIsEmpty() {
-        
+        assertFalse(listCinA.isEmpty());
+        listCinA.clear();
+        assertTrue(listCinA.isEmpty());
     }
     public void testAddIndex() {
         

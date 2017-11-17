@@ -25,7 +25,11 @@ public class Glyph {
     }
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        return "";
+        builder.append(representation +" ");
+        builder.append(song.toString()+" ");
+        builder.append(heard+" ");
+        builder.append(like+" ");
+        return builder.toString();
     }
     
 
