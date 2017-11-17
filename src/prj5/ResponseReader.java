@@ -3,7 +3,7 @@ package prj5;
 import java.io.File;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
-import java.text.ParseException;
+
 
 public class ResponseReader {
 
@@ -14,42 +14,61 @@ public class ResponseReader {
     private LinkedList<Response> responseList;
 
     public ResponseReader(String responsesFileName, String songListFileName) 
-        throws FileNotFoundException, ParseException{
-        
+        throws FileNotFoundException
+    {
+
         songList = new LinkedList<Song>();
         responseList = new LinkedList<Response>();
 
         if (responsesFileName == null) {
             throw new IllegalArgumentException();
         }
+        if (songListFileName == null) {
+            throw new IllegalArgumentException();
+        }
         responseList = readResponses(responsesFileName);
         songList = readSongs(songListFileName);
+
     }
 
 
 
-    public LinkedList<Response> readResponses(String fileName) 
-        throws FileNotFoundException{
+    public LinkedList<Response> readResponses(String fileName) throws FileNotFoundException 
+    {
         LinkedList<Response> responses = new LinkedList<Response>();
+        if (fileName == null) {
+            throw new FileNotFoundException();
+        }
 
         Scanner scan = new Scanner(new File(fileName));
+        scan.nextLine();
+        scan.nextLine();
         while (scan.hasNextLine()) {
             String line = scan.nextLine();
             String [] strings  = line.split("\\s*,\\s*");
-            String id = strings[0];
-            String date = strings[1];
-            String major = strings[2];
-            String region = strings[3];
-            String hobby = strings[4];
-            for (int i = 5; i <= (NUMBER_OF_SONGS/2); i = i + 2) {
-                scanTwoLines(strings[i], strings[i+1]);
+
+            if (strings.length > 50) {
+
+
+                String id = strings[0];
+                String date = strings[1];
+                String major = strings[2];
+                String region = strings[3];
+                String hobby = strings[4];
+
+                for (int i = 5; i <= 2*NUMBER_OF_SONGS + 5; i = i + 2) {
+                    scanTwoLines(strings[i], strings[i+1]);
+                }
+                responses.add(new Response(id, date, major, region, hobby, hasHeardList, doesLikeList));
+
+
             }
-            responses.add(new Response(id, date, major, region, hobby, hasHeardList, doesLikeList));
-
-
         }
+
+
         scan.close();
         return responses;
+
     }
 
 
@@ -58,16 +77,20 @@ public class ResponseReader {
         doesLikeList = new LinkedList<String>();
         hasHeardList.add(firstline);
         doesLikeList.add(secondline);
+
     }
-    
-    
-    
-    
+
+
+
+
     public LinkedList<Song> readSongs(String fileName) 
-    throws FileNotFoundException {
-        
+        throws FileNotFoundException {
+
         LinkedList<Song> songs = new LinkedList<Song>();
-        
+        if (fileName == null) {
+            throw new FileNotFoundException();
+        }
+
         Scanner scan = new Scanner(new File(fileName));
         while (scan.hasNextLine()) {
             String line = scan.nextLine();
@@ -80,10 +103,10 @@ public class ResponseReader {
         }
         scan.close();
         return songs;
-        
     }
     public LinkedList<Song> getSongList(){
         return songList;
+
     }
     public LinkedList<Response> getResponseList(){
         return responseList;

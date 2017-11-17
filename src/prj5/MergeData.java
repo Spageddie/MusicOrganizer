@@ -9,7 +9,7 @@ public class MergeData {
     private LinkedList<String> regions = new LinkedList<String>();
 
 
-    public MergeData(LinkedList<Song> s, LinkedList<Response> r) {
+    public MergeData(LinkedList<Response> r, LinkedList<Song> s) {
         makeLists();
         LinkedList<Double> readHeardPercent = new LinkedList<Double>();
         LinkedList<Double> readLikePercent = new LinkedList<Double>();
@@ -139,7 +139,7 @@ public class MergeData {
                     if (r.get(i).getMajor().equals("Other Engineering")) {
                         if(r.get(i).getHeardSongList().get(i).equals("Yes")) {
                             engHeardCount++;
-
+                            
                         }
                         if(r.get(i).getLikesSongList().get(i).equals("Yes")) {
                             engLikeCount++;
@@ -148,6 +148,7 @@ public class MergeData {
 
                     }
                     if (r.get(i).getMajor().equals("Computer Science")) {
+                        System.out.println(r.get(i).getHeardSongList().get(i).toString());
                         if(r.get(i).getHeardSongList().get(i).equals("Yes")) {
                             csHeardCount++;
 
@@ -351,6 +352,7 @@ public class MergeData {
 
         public LinkedList<Glyph> getHobbyGlyphs() {
             return hobbyList;
+            
         }
 
 
