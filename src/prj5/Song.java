@@ -11,6 +11,18 @@ public class Song {
     private String artist;
     private String year;
     private String genre;
+    private Double percentCS;
+    private Double percentMath;
+    private Double percentEng;
+    private Double percentOther;
+    private Double percentSE;
+    private Double percentNE;
+    private Double percentUS;
+    private Double percentOut;
+    private Double percentMusic;
+    private Double percentSports;
+    private Double percentReading;
+    private Double percentArt;
     /**
      * Constructor for Song object
      * @param title
@@ -27,15 +39,39 @@ public class Song {
         this.artist = artist;
         this.year = year;
         this.genre = genre;
+        percentCS = 0.;
+        percentMath = 0.;
+        percentEng = 0.;
+        percentOther = 0.;
+        percentSE = 0.;
+        percentNE = 0.;
+        percentUS = 0.;
+        percentOut = 0.;
+        percentMusic = 0.;
+        percentSports = 0.;
+        percentReading = 0.;
+        percentArt = 0.;
     }
     public Song(String title, String artist, String year, String genre, 
-        Double percentCs, Double percentMath, Double percentEng, Double percentOther,
+        Double percentCS, Double percentMath, Double percentEng, Double percentOther,
         Double percentSE, Double percentNE, Double percentUS, Double percentOut,
         Double percentMusic, Double percentSports, Double percentReading, Double percentArt) {
         this.title = title;
         this.artist = artist;
         this.year = year;
         this.genre = genre;
+        this.percentCS = percentCS;
+        this.percentMath = percentMath;
+        this.percentEng = percentEng;
+        this.percentOther = percentOther;
+        this.percentSE = percentSE;
+        this.percentNE = percentNE;
+        this.percentUS = percentUS;
+        this.percentOut = percentOut;
+        this.percentMusic = percentMusic;
+        this.percentSports = percentSports;
+        this.percentReading = percentReading;
+        this.percentArt = percentArt;
     }
     /**
      * Getter method for title
