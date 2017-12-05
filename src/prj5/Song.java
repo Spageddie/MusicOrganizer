@@ -28,6 +28,15 @@ public class Song {
         this.year = year;
         this.genre = genre;
     }
+    public Song(String title, String artist, String year, String genre, 
+        Double percentCs, Double percentMath, Double percentEng, Double percentOther,
+        Double percentSE, Double percentNE, Double percentUS, Double percentOut,
+        Double percentMusic, Double percentSports, Double percentReading, Double percentArt) {
+        this.title = title;
+        this.artist = artist;
+        this.year = year;
+        this.genre = genre;
+    }
     /**
      * Getter method for title
      * @return title of song
