@@ -14,7 +14,12 @@ public class MergeData {
     private LinkedList<String> hobbies = new LinkedList<String>();
     private LinkedList<String> majors = new LinkedList<String>();
     private LinkedList<String> regions = new LinkedList<String>();
-
+    /**
+     * Constructor of mergeData
+     */
+    public MergeData() {
+        
+    }
 
     /**
      * Constructor for MergeData
