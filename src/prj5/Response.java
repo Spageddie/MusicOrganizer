@@ -123,7 +123,7 @@ public class Response {
         builder.append(major + " ");
         builder.append(hobby + " ");
         builder.append(region + " ");
-        builder.append(hasHeardSong.toString());
+        builder.append(hasHeardSong.toString() + " ");
         builder.append(likesSong.toString());
         return builder.toString();
     }
