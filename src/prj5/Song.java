@@ -524,6 +524,18 @@ public class Song {
     public void setGenre(String genre) {
         this.genre = genre;
     }
+    public int compareTitle(Song other) {
+       return this.title.compareTo(other.getTitle());
+    }
+    public int compareArtist(Song other) {
+       return this.artist.compareTo(other.getArtist());
+    }
+    public int compareGenre(Song other) {
+        return this.genre.compareTo(other.getGenre());
+    }
+    public int compareYear(Song other) {
+        return this.year.compareTo(other.getYear());
+    }
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append(title+" ");
