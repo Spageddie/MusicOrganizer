@@ -4,6 +4,7 @@ package prj5;
  * has data and points to the next node in the list
  * @author Matthew Marquez (mmarquez)
  * @version 2017.11.15
+ * 
  *
  * @param <T> generic type for Node
  */
@@ -19,7 +20,7 @@ public class Node<T> {
     public Node(T data) {
         this.data = data;
     }
-
+    
     /**
      * Sets the next node
      * @param node
