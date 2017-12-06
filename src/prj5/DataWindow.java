@@ -11,6 +11,8 @@ import CS2114.*;
  */
 public class DataWindow {
     private GlyphOrganizer dataSorter;
+    private int songNum;
+    private String by;
     private Window window;
     private Button previous;
     private Button next;
@@ -23,18 +25,23 @@ public class DataWindow {
     private Button regionRep;
     private Button quit;
     private Color[] graphColors;
-    private TextShape legendSongTitle;
-    private TextShape heardLikes;
     private Shape legendBar;
     private Shape legendBoxIn;
     private Shape legendBoxOut;
-    private int pageCount = 0;
     private TextShape legend;
-    private TextShape ts1;
-    private TextShape ts2;
-    private TextShape ts3;
-    private TextShape ts4;
-    private Shape[] poles;
+    private TextShape legendText;
+    private TextShape start;
+    private TextShape legendSongTitle;
+    private TextShape heardLikes;
+    private TextShape title;
+    private TextShape artist;
+    private Shape bar;
+    private Shape heard1;
+    private Shape heard2;
+    private Shape heard3;
+    private Shape liked1;
+    private Shape liked2;
+    private Shape liked3;
 
     private TextShape sTitle;
     private TextShape sArtist;
@@ -52,6 +59,11 @@ public class DataWindow {
 
         window = new Window("Project5");
         window.setSize(900, 600);
+
+        start = new TextShape(360, 225, "Select how to represent songs",
+            Color.RED);
+        start.setBackgroundColor(Color.WHITE);
+        window.addShape(start);
 
         this.previous = new Button("< Previous");
         this.window.addButton(previous, WindowSide.NORTH);
@@ -84,30 +96,52 @@ public class DataWindow {
         this.quit = new Button("Quit");
         this.window.addButton(quit, WindowSide.SOUTH);
         this.quit.onClick(this, "clickedQuit");
+
+        by = "by";
+        previous.disable();
     }
 
 
     /**
+     * Gets the window display
      * 
+     * @return myWindow
      */
-    public void update() {
-        graphColors = new Color[6];
+    public Window getWindow() {
+        return window;
+    }
+
+
+    private void displayLegend(
+        String s1,
+        String s2,
+        String s3,
+        String s4,
+        String s5) {
         Color c1 = new Color(255, 51, 255);
         Color c2 = new Color(51, 51, 255);
         Color c3 = new Color(255, 153, 51);
         Color c4 = new Color(51, 255, 51);
         Color white = new Color(255, 255, 255);
         Color border = new Color(10, 10, 10);
-        graphColors[0] = c1;
-        graphColors[1] = c2;
-        graphColors[2] = c3;
-        graphColors[3] = c4;
-        graphColors[4] = white;
-        graphColors[5] = border;
-
-        legendSongTitle = new TextShape(777, 375, "Song Title");
-        legendSongTitle.setBackgroundColor(white);
+        legendText = new TextShape(760, 280, s1, c1);
+        legendText.setBackgroundColor(Color.WHITE);
+        window.addShape(legendText);
+        legendText = new TextShape(760, 300, s2, c2);
+        legendText.setBackgroundColor(Color.WHITE);
+        window.addShape(legendText);
+        legendText = new TextShape(760, 320, s3, c3);
+        legendText.setBackgroundColor(Color.WHITE);
+        window.addShape(legendText);
+        legendText = new TextShape(760, 340, s4, c4);
+        legendText.setBackgroundColor(Color.WHITE);
+        window.addShape(legendText);
+        legendSongTitle = new TextShape(777, 375, "Song Title", Color.BLACK);
+        legendSongTitle.setBackgroundColor(Color.WHITE);
         window.addShape(legendSongTitle);
+        legend = new TextShape(760, 260, s5);
+        legend.setBackgroundColor(Color.WHITE);
+        window.addShape(legend);
         legendBar = new Shape(813, 401, 5, 35, border);
         window.addShape(legendBar);
         heardLikes = new TextShape(767, 410, "Heard    Likes");
@@ -117,14 +151,76 @@ public class DataWindow {
         legendBoxIn = new Shape(753, 258, 114, 189, white);
         this.window.addShape(legendBoxIn);
         this.window.addShape(legendBoxOut);
+    }
 
-// for (int i = 0; i < 3; i++) {
-// for (int j = 0; j < 3; j++) {
-// Shape pole = new Shape(125 + 250*i, 80 + 50*j, 5, 60, border);
-//
-// }
-// }
-        
+
+    /**
+     * Displays the hobby legend
+     */
+    private void displayLHobby() {
+        displayLegend("Read", "Art", "Sports", "Music", "Hobby Legend");
+    }
+
+
+    /**
+     * Displays the region legend
+     */
+    private void displayLRegion() {
+        displayLegend("SE", "NE", "US Other", "Not US", "Region Legend");
+    }
+
+
+    /**
+     * Displays the major legend
+     */
+    private void displayLMajor() {
+        displayLegend("Comp Sci", "Other Eng", "Math/CMDA", "Other",
+            "Major Legend");
+    }
+
+
+    /**
+     * 
+     */
+    private void drawGlyph() {
+        int n = songNum;
+        int height = 0;
+        int width = 0;
+        int barSpacingHeight = 150;
+        int barSpacingWidth = 250;
+        int heard1;
+        int heard2;
+        int heard3;
+        int heard4;
+        int liked1;
+        int liked2;
+        int liked3;
+        int liked4;
+        Color white = new Color(255, 255, 255);
+        Color border = new Color(10, 10, 10);
+
+        while (n < (songNum + 6)) {
+            if (n == (songNum + 3)) {
+                height += 150;
+            }
+            bar = new Shape(125, 80, 5, 60, border);
+            window.addShape(bar);
+
+            window.addShape(bar);
+
+            width += 250;
+            n++;
+        }
+    }
+
+
+    /**
+     * 
+     */
+    public void update() {
+        Color white = new Color(255, 255, 255);
+        Color border = new Color(10, 10, 10);
+
         Shape pole1 = new Shape(125, 80, 5, 60, border);
         window.addShape(pole1);
         Shape pole2 = new Shape(125 + 250, 80, 5, 60, border);
@@ -144,17 +240,6 @@ public class DataWindow {
         Shape pole9 = new Shape(125 + 2 * 250, 80 + 2 * 150, 5, 60, border);
         window.addShape(pole9);
 
-        if (pageCount > 3) {
-            next.disable();
-        }
-        if (pageCount == 1) {
-            previous.disable();
-        }
-        else {
-            next.enable();
-            previous.enable();
-        }
-        
         this.sTitle = new TextShape(75, 35, "Call Me Maybe");
         sTitle.setBackgroundColor(white);
         this.window.addShape(sTitle);
@@ -169,11 +254,6 @@ public class DataWindow {
         this.window.addShape(r3);
         r4 = new Shape(38, 125, 110, 15, graphColors[3]);
         this.window.addShape(r4);
-        
-    }
-
-
-    private void drawPoles() {
 
     }
 
@@ -184,7 +264,10 @@ public class DataWindow {
      * @param b
      */
     public void clickedPrevious(Button b) {
-        pageCount--;
+        next.enable();
+        window.removeAllShapes();
+
+        songNum -= 6;
     }
 
 
@@ -194,7 +277,10 @@ public class DataWindow {
      * @param b
      */
     public void clickedNext(Button b) {
-        pageCount++;
+        previous.enable();
+        window.removeAllShapes();
+
+        songNum += 6;
     }
 
 
@@ -245,35 +331,7 @@ public class DataWindow {
      */
     public void clickedHobby(Button b) {
         window.removeAllShapes();
-        graphColors = new Color[6];
-        Color c1 = new Color(255, 51, 255);
-        Color c2 = new Color(51, 51, 255);
-        Color c3 = new Color(255, 153, 51);
-        Color c4 = new Color(51, 255, 51);
-        Color white = new Color(255, 255, 255);
-        Color border = new Color(10, 10, 10);
-        graphColors[0] = c1;
-        graphColors[1] = c2;
-        graphColors[2] = c3;
-        graphColors[3] = c4;
-        graphColors[4] = white;
-        graphColors[5] = border;
-        legend = new TextShape(760, 260, "Hobby Legend");
-        legend.setBackgroundColor(white);
-        window.addShape(legend);
-        ts1 = new TextShape(760, 280, "Read", graphColors[0]);
-        ts1.setBackgroundColor(white);
-        window.addShape(ts1);
-        ts2 = new TextShape(760, 300, "Art", graphColors[1]);
-        ts2.setBackgroundColor(white);
-        window.addShape(ts2);
-        ts3 = new TextShape(760, 320, "Sports", graphColors[2]);
-        ts3.setBackgroundColor(white);
-        window.addShape(ts3);
-        ts4 = new TextShape(760, 340, "Music", graphColors[3]);
-        ts4.setBackgroundColor(white);
-        window.addShape(ts4);
-        update();
+        displayLHobby();
     }
 
 
@@ -284,35 +342,7 @@ public class DataWindow {
      */
     public void clickedMajor(Button b) {
         window.removeAllShapes();
-        graphColors = new Color[6];
-        Color c1 = new Color(255, 51, 255);
-        Color c2 = new Color(51, 51, 255);
-        Color c3 = new Color(255, 153, 51);
-        Color c4 = new Color(51, 255, 51);
-        Color white = new Color(255, 255, 255);
-        Color border = new Color(10, 10, 10);
-        graphColors[0] = c1;
-        graphColors[1] = c2;
-        graphColors[2] = c3;
-        graphColors[3] = c4;
-        graphColors[4] = white;
-        graphColors[5] = border;
-        legend = new TextShape(760, 260, "Major Legend");
-        legend.setBackgroundColor(white);
-        window.addShape(legend);
-        ts1 = new TextShape(760, 280, "Compsci", graphColors[0]);
-        ts1.setBackgroundColor(white);
-        window.addShape(ts1);
-        ts2 = new TextShape(760, 300, "Other Eng", graphColors[1]);
-        ts2.setBackgroundColor(white);
-        window.addShape(ts2);
-        ts3 = new TextShape(760, 320, "Math/CMDA", graphColors[2]);
-        ts3.setBackgroundColor(white);
-        window.addShape(ts3);
-        ts4 = new TextShape(760, 340, "Other", graphColors[3]);
-        ts4.setBackgroundColor(white);
-        window.addShape(ts4);
-        update();
+        displayLMajor();
     }
 
 
@@ -323,35 +353,7 @@ public class DataWindow {
      */
     public void clickedRegion(Button b) {
         window.removeAllShapes();
-        graphColors = new Color[6];
-        Color c1 = new Color(255, 51, 255);
-        Color c2 = new Color(51, 51, 255);
-        Color c3 = new Color(255, 153, 51);
-        Color c4 = new Color(51, 255, 51);
-        Color white = new Color(255, 255, 255);
-        Color border = new Color(10, 10, 10);
-        graphColors[0] = c1;
-        graphColors[1] = c2;
-        graphColors[2] = c3;
-        graphColors[3] = c4;
-        graphColors[4] = white;
-        graphColors[5] = border;
-        legend = new TextShape(760, 260, "Region Legend");
-        legend.setBackgroundColor(white);
-        window.addShape(legend);
-        ts1 = new TextShape(760, 285, "NE US", graphColors[0]);
-        ts1.setBackgroundColor(white);
-        window.addShape(ts1);
-        ts2 = new TextShape(760, 305, "SE US", graphColors[1]);
-        ts2.setBackgroundColor(white);
-        window.addShape(ts2);
-        ts3 = new TextShape(760, 325, "Rest of US", graphColors[2]);
-        ts3.setBackgroundColor(white);
-        window.addShape(ts3);
-        ts4 = new TextShape(760, 345, "Outside US", graphColors[3]);
-        ts4.setBackgroundColor(white);
-        window.addShape(ts4);
-        update();
+        displayLRegion();
     }
 
 
