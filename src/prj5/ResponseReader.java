@@ -69,7 +69,7 @@ public class ResponseReader {
         while (scan.hasNextLine()) {
             String line = scan.nextLine();
             String[] strings = line.split("\\s*,\\s*");
-            while (strings.length<=2) {
+            while (strings.length<=30) {
                 line = scan.nextLine();
                 strings = line.split("\\s*,\\s*");
             }
@@ -78,7 +78,7 @@ public class ResponseReader {
             String major = strings[2];
             String region = strings[3];
             String hobby = strings[4];
-            Response response = new Response(id, date, major, region, hobby);
+            Response response = new Response(id, date, major, hobby, region);
             responses.add(response);
             for(int i=5; i<strings.length-1; i=i+2) {
                 scanTwoLines(strings[i], strings[i+1], response);
@@ -87,6 +87,14 @@ public class ResponseReader {
         }
 
         scan.close();
+        for (int i=0; i<responses.size(); i++) {
+            if (responses.get(i).getHeardSongList().size()<59) {
+                responses.remove(i);
+            }
+            if (responses.get(i).getLikesSongList().size()<59) {
+                responses.remove(i);
+            }
+        }
         return responses;
 
     }

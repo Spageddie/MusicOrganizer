@@ -392,7 +392,7 @@ public class Song {
      * Setter method for heardPercentSports
      * @param percent heard for sports hobby
      */
-    public void getHeardPercentSports(double heardPercentSports) {
+    public void setHeardPercentSports(double heardPercentSports) {
         this.heardPercentSports = heardPercentSports;
     }
     /**
@@ -475,7 +475,7 @@ public class Song {
      * Setter method for likePercentSports
      * @param percent like for sports hobby
      */
-    public void getLikePercentSports(double likePercentSports) {
+    public void setLikePercentSports(double likePercentSports) {
         this.likePercentSports = likePercentSports;
     }
     /**
@@ -530,6 +530,33 @@ public class Song {
         builder.append(artist+" ");
         builder.append(year +" ");
         builder.append(genre+" ");
+        //majors
+        builder.append("CS Heard " + heardPercentCS);
+        builder.append(" CS Like " + likePercentCS);
+        builder.append(" Math Heard " + heardPercentMath);
+        builder.append(" Math Like "+ likePercentMath);
+        builder.append(" Eng Heard " + heardPercentEng);
+        builder.append(" Eng Like "+ likePercentEng);
+        builder.append(" Other Heard "+ heardPercentOther);
+        builder.append(" Other Like "+ likePercentOther);
+        //regions
+        builder.append(" SE Heard " + heardPercentSE);
+        builder.append(" SE Like " + likePercentSE);
+        builder.append(" NE Heard " + heardPercentNE);
+        builder.append(" NE Like "+ likePercentNE);
+        builder.append(" US Heard " + heardPercentUS);
+        builder.append(" US Like "+ likePercentUS);
+        builder.append(" Out Heard "+ heardPercentOut);
+        builder.append(" Out Like "+ likePercentOut);
+        //hobbies
+        builder.append(" Music Heard " + heardPercentMusic);
+        builder.append(" Music Like " + likePercentMusic);
+        builder.append(" Sports Heard " + heardPercentSports);
+        builder.append(" Sports Like "+ likePercentSports);
+        builder.append(" Art Heard " + heardPercentArt);
+        builder.append(" Art Like "+ likePercentArt);
+        builder.append(" Reading Heard "+ heardPercentReading);
+        builder.append(" Reading Like "+ likePercentReading+ "\n");
         return builder.toString();
     }
 }
