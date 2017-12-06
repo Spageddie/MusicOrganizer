@@ -11,18 +11,30 @@ public class Song {
     private String artist;
     private String year;
     private String genre;
-    private Double percentCS;
-    private Double percentMath;
-    private Double percentEng;
-    private Double percentOther;
-    private Double percentSE;
-    private Double percentNE;
-    private Double percentUS;
-    private Double percentOut;
-    private Double percentMusic;
-    private Double percentSports;
-    private Double percentReading;
-    private Double percentArt;
+    private double heardPercentCS;
+    private double heardPercentMath;
+    private double heardPercentEng;
+    private double heardPercentOther;
+    private double heardPercentSE;
+    private double heardPercentNE;
+    private double heardPercentUS;
+    private double heardPercentOut;
+    private double heardPercentMusic;
+    private double heardPercentSports;
+    private double heardPercentReading;
+    private double heardPercentArt;
+    private double likePercentCS;
+    private double likePercentMath;
+    private double likePercentEng;
+    private double likePercentOther;
+    private double likePercentSE;
+    private double likePercentNE;
+    private double likePercentUS;
+    private double likePercentOut;
+    private double likePercentMusic;
+    private double likePercentSports;
+    private double likePercentReading;
+    private double likePercentArt;
     /**
      * Constructor for Song object
      * @param title
@@ -39,39 +51,86 @@ public class Song {
         this.artist = artist;
         this.year = year;
         this.genre = genre;
-        percentCS = 0.;
-        percentMath = 0.;
-        percentEng = 0.;
-        percentOther = 0.;
-        percentSE = 0.;
-        percentNE = 0.;
-        percentUS = 0.;
-        percentOut = 0.;
-        percentMusic = 0.;
-        percentSports = 0.;
-        percentReading = 0.;
-        percentArt = 0.;
+        heardPercentCS = 0.;
+        heardPercentMath = 0.;
+        heardPercentEng = 0.;
+        heardPercentOther = 0.;
+        heardPercentSE = 0.;
+        heardPercentNE = 0.;
+        heardPercentUS = 0.;
+        heardPercentOut = 0.;
+        heardPercentMusic = 0.;
+        heardPercentSports = 0.;
+        heardPercentReading = 0.;
+        heardPercentArt = 0.;
     }
+    /**
+     * change heard and like percentages for 1 array for each specification (ie heard and like of same
+     * specificiation in one array) so you can cut down parameters by two
+     * @param title
+     * @param artist
+     * @param year
+     * @param genre
+     * @param heardPercentCS
+     * @param heardPercentMath
+     * @param heardPercentEng
+     * @param heardPercentOther
+     * @param heardPercentSE
+     * @param heardPercentNE
+     * @param heardPercentUS
+     * @param heardPercentOut
+     * @param heardPercentMusic
+     * @param heardPercentSports
+     * @param heardPercentReading
+     * @param heardPercentArt
+     * @param likePercentCS
+     * @param likePercentMath
+     * @param likePercentEng
+     * @param likePercentOther
+     * @param likePercentSE
+     * @param likePercentNE
+     * @param likePercentUS
+     * @param likePercentOut
+     * @param likePercentMusic
+     * @param likePercentSports
+     * @param likePercentReading
+     * @param likePercentArt
+     */
     public Song(String title, String artist, String year, String genre, 
-        Double percentCS, Double percentMath, Double percentEng, Double percentOther,
-        Double percentSE, Double percentNE, Double percentUS, Double percentOut,
-        Double percentMusic, Double percentSports, Double percentReading, Double percentArt) {
+        double heardPercentCS, double heardPercentMath, double heardPercentEng, double heardPercentOther,
+        double heardPercentSE, double heardPercentNE, double heardPercentUS, double heardPercentOut,
+        double heardPercentMusic, double heardPercentSports, double heardPercentReading, double heardPercentArt,
+        double likePercentCS, double likePercentMath, double likePercentEng, double likePercentOther, 
+        double likePercentSE, double likePercentNE, double likePercentUS, double likePercentOut,
+        double likePercentMusic, double likePercentSports, double likePercentReading, double likePercentArt) {
         this.title = title;
         this.artist = artist;
         this.year = year;
         this.genre = genre;
-        this.percentCS = percentCS;
-        this.percentMath = percentMath;
-        this.percentEng = percentEng;
-        this.percentOther = percentOther;
-        this.percentSE = percentSE;
-        this.percentNE = percentNE;
-        this.percentUS = percentUS;
-        this.percentOut = percentOut;
-        this.percentMusic = percentMusic;
-        this.percentSports = percentSports;
-        this.percentReading = percentReading;
-        this.percentArt = percentArt;
+        this.heardPercentCS = heardPercentCS;
+        this.heardPercentMath = heardPercentMath;
+        this.heardPercentEng = heardPercentEng;
+        this.heardPercentOther = heardPercentOther;
+        this.heardPercentSE = heardPercentSE;
+        this.heardPercentNE = heardPercentNE;
+        this.heardPercentUS = heardPercentUS;
+        this.heardPercentOut = heardPercentOut;
+        this.heardPercentMusic = heardPercentMusic;
+        this.heardPercentSports = heardPercentSports;
+        this.heardPercentReading = heardPercentReading;
+        this.heardPercentArt = heardPercentArt;
+        this.likePercentCS = likePercentCS;
+        this.likePercentMath = likePercentMath;
+        this.likePercentEng = likePercentEng;
+        this.likePercentOther = likePercentOther;
+        this.likePercentSE = likePercentSE;
+        this.likePercentNE = likePercentNE;
+        this.likePercentUS = likePercentUS;
+        this.likePercentOut = likePercentOut;
+        this.likePercentMusic = likePercentMusic;
+        this.likePercentSports = likePercentSports;
+        this.likePercentReading = likePercentReading;
+        this.likePercentArt = likePercentArt;
     }
     /**
      * Getter method for title
@@ -100,6 +159,338 @@ public class Song {
      */
     public String getGenre() {
         return genre;
+    }
+    /**
+     * Getter method for heardPercentCS
+     * @return percent heard for cs major
+     */
+    public double getHeardPercentCS() {
+        return heardPercentCS;
+    }/**
+     * Getter method for heardPercentMath
+     * @return percent heard for math major
+     */
+    public double getHeardPercentMath() {
+        return heardPercentMath;
+    }
+    /**
+     * Getter method for heardPercentEng
+     * @return percent heard for other engineering major
+     */
+    public double getHeardPercentEng() {
+        return heardPercentEng;
+    }
+    /**
+     * Getter method for heardPercentOther
+     * @return percent heard for other major
+     */
+    public double getHeardPercentOther() {
+        return heardPercentOther;
+    }
+    /**
+     * Getter method for heardPercentSE
+     * @return percent heard for southeast region
+     */
+    public double getHeardPercentSE() {
+        return heardPercentSE;
+    }
+    /**
+     * Getter method for heardPercentNE
+     * @return percent heard for northeast region
+     */
+    public double getHeardPercentNE() {
+        return heardPercentNE;
+    }
+    /**
+     * Getter method for heardPercentUs
+     * @return percent heard for other region in US
+     */
+    public double getHeardPercentUS() {
+        return heardPercentUS;
+    }
+    /**
+     * Getter method for heardPercentOut
+     * @return percent heard for regions out of US
+     */
+    public double getHeardPercentOut() {
+        return heardPercentOut;
+    }
+    /**
+     * Getter method for heardPercentMusic
+     * @return percent heard for music hobby
+     */
+    public double getHeardPercentMusic() {
+        return heardPercentMusic;
+    }
+    /**
+     * Getter method for heardPercentSports
+     * @return percent heard for sports hobby
+     */
+    public double getHeardPercentSports() {
+        return heardPercentSports;
+    }
+    /**
+     * Getter method for heardPercentArt
+     * @return percent heard for art hobby
+     */
+    public double getHeardPercentArt() {
+        return heardPercentArt;
+    }
+    /**
+     * Getter method for heardPercentReading
+     * @return percent heard for reading hobby
+     */
+    public double getHeardPercentReading() {
+        return heardPercentReading;
+    }
+    /**
+     * Getter method for likePercentCS
+     * @return percent like for cs major
+     */
+    public double getLikePercentCS() {
+        return likePercentCS;
+    }/**
+     * Getter method for likePercentMath
+     * @return percent like for math major
+     */
+    public double getLikePercentMath() {
+        return likePercentMath;
+    }
+    /**
+     * Getter method for likePercentEng
+     * @return percent like for other engineering major
+     */
+    public double getLikePercentEng() {
+        return likePercentEng;
+    }
+    /**
+     * Getter method for likePercentOther
+     * @return percent like for other major
+     */
+    public double getLikePercentOther() {
+        return likePercentOther;
+    }
+    /**
+     * Getter method for likePercentSE
+     * @return percent like for southeast region
+     */
+    public double getLikePercentSE() {
+        return likePercentSE;
+    }
+    /**
+     * Getter method for likePercentNE
+     * @return percent like for northeast region
+     */
+    public double getLikePercentNE() {
+        return likePercentNE;
+    }
+    /**
+     * Getter method for likePercentUs
+     * @return percent like for other region in US
+     */
+    public double getLikePercentUS() {
+        return likePercentUS;
+    }
+    /**
+     * Getter method for likePercentOut
+     * @return percent like for regions out of US
+     */
+    public double getLikePercentOut() {
+        return likePercentOut;
+    }
+    /**
+     * Getter method for likePercentMusic
+     * @return percent like for music hobby
+     */
+    public double getLikePercentMusic() {
+        return likePercentMusic;
+    }
+    /**
+     * Getter method for likePercentSports
+     * @return percent like for sports hobby
+     */
+    public double getLikePercentSports() {
+        return likePercentSports;
+    }
+    /**
+     * Getter method for likePercentArt
+     * @return percent like for art hobby
+     */
+    public double getLikePercentArt() {
+        return likePercentArt;
+    }
+    /**
+     * Getter method for likePercentReading
+     * @return percent like for reading hobby
+     */
+    public double getLikePercentReading() {
+        return likePercentReading;
+    }
+    /**
+     * setter method for heardPercentCS
+     * @param percent heard for cs major
+     */
+    public void setHeardPercentCS(double heardPercentCS) {
+        this.heardPercentCS = heardPercentCS;
+    }/**
+     * Setter method for heardPercentMath
+     * @param percent heard for math major
+     */
+    public void setHeardPercentMath(double heardPercentMath) {
+        this.heardPercentMath = heardPercentMath;
+    }
+    /**
+     * Setter method for heardPercentEng
+     * @param percent heard for other engineering major
+     */
+    public void setHeardPercentEng(double heardPercentEng) {
+        this.heardPercentEng = heardPercentEng;
+    }
+    /**
+     * Setter method for heardPercentOther
+     * @param percent heard for other major
+     */
+    public void setHeardPercentOther(double heardPercentOther) {
+        this.heardPercentOther = heardPercentOther;
+    }
+    /**
+     * Setter method for heardPercentSE
+     * @param percent heard for southeast region
+     */
+    public void setHeardPercentSE(double heardPercentSE) {
+        this.heardPercentSE = heardPercentSE;
+    }
+    /**
+     * Setter method for heardPercentNE
+     * @param percent heard for northeast region
+     */
+    public void setHeardPercentNE(double heardPercentNE) {
+        this.heardPercentNE = heardPercentNE;
+    }
+    /**
+     * Setter method for heardPercentUs
+     * @param percent heard for other region in US
+     */
+    public void setHeardPercentUS(double heardPercentUS) {
+        this.heardPercentUS = heardPercentUS;
+    }
+    /**
+     * Setter method for heardPercentOut
+     * @param percent heard for regions out of US
+     */
+    public void setHeardPercentOut(double heardPercentOut) {
+        this.heardPercentOut = heardPercentOut;
+    }
+    /**
+     * Setter method for heardPercentMusic
+     * @param percent heard for music hobby
+     */
+    public void setHeardPercentMusic(double heardPercentMusic) {
+        this.heardPercentMusic = heardPercentMusic;
+    }
+    /**
+     * Setter method for heardPercentSports
+     * @param percent heard for sports hobby
+     */
+    public void getHeardPercentSports(double heardPercentSports) {
+        this.heardPercentSports = heardPercentSports;
+    }
+    /**
+     * Setter method for heardPercentArt
+     * @param percent heard for art hobby
+     */
+    public void setHeardPercentArt(double heardPercentArt) {
+        this.heardPercentArt = heardPercentArt;
+    }
+    /**
+     * Setter method for heardPercentReading
+     * @param percent heard for reading hobby
+     */
+    public void setHeardPercentReading(double heardPercentReading) {
+        this.heardPercentReading = heardPercentReading;
+    }
+    /**
+     * Setter method for likePercentCS
+     * @param percent like for cs major
+     */
+    public void setLikePercentCS(double likePercentCS) {
+        this.likePercentCS = likePercentCS;
+    }/**
+     * Setter method for likePercentMath
+     * @param percent like for math major
+     */
+    public void setLikePercentMath(double likePercentMath) {
+        this.likePercentMath = likePercentMath;
+    }
+    /**
+     * Setter method for likePercentEng
+     * @param percent like for other engineering major
+     */
+    public void setLikePercentEng(double likePercentEng) {
+        this.likePercentEng = likePercentEng;
+    }
+    /**
+     * Setter method for likePercentOther
+     * @param percent like for other major
+     */
+    public void setLikePercentOther(double likePercentOther) {
+        this.likePercentOther = likePercentOther;
+    }
+    /**
+     * Setter method for likePercentSE
+     * @param percent like for southeast region
+     */
+    public void setLikePercentSE(double likePercentSE) {
+        this.likePercentSE = likePercentSE;
+    }
+    /**
+     * Setter method for likePercentNE
+     * @param percent like for northeast region
+     */
+    public void setLikePercentNE(double likePercentNE) {
+        this.likePercentNE = likePercentNE;
+    }
+    /**
+     * Setter method for likePercentUs
+     * @param percent like for other region in US
+     */
+    public void setLikePercentUS(double likePercentUS) {
+        this.likePercentUS = likePercentUS;
+    }
+    /**
+     * Setter method for likePercentOut
+     * @param percent like for regions out of US
+     */
+    public void setLikePercentOut(double likePercentOut) {
+        this.likePercentOut = likePercentOut;
+    }
+    /**
+     * Setter method for likePercentMusic
+     * @param percent like for music hobby
+     */
+    public void setLikePercentMusic(double likePercentMusic) {
+        this.likePercentMusic = likePercentMusic;
+    }
+    /**
+     * Setter method for likePercentSports
+     * @param percent like for sports hobby
+     */
+    public void getLikePercentSports(double likePercentSports) {
+        this.likePercentSports = likePercentSports;
+    }
+    /**
+     * Setter method for likePercentArt
+     * @param percent like for art hobby
+     */
+    public void setLikePercentArt(double likePercentArt) {
+        this.likePercentArt = likePercentArt;
+    }
+    /**
+     * Setter method for heardPercentReading
+     * @param percent heard for reading hobby
+     */
+    public void setLikePercentReading(double likePercentReading) {
+        this.likePercentReading = likePercentReading;
     }
     /**
      * Setter method for artist
