@@ -18,6 +18,19 @@ public class Response {
     private LinkedList<String> hasHeardSong;
     private LinkedList<String> likesSong;
 
+    public Response(String identification,
+        String dateName,
+        String majorName,
+        String hobbyName,
+        String regionName) {
+        this.id = identification;
+        this.date = dateName;
+        this.major = majorName;
+        this.hobby = hobbyName;
+        this.region = regionName;
+        hasHeardSong = new LinkedList();
+        likesSong = new LinkedList();
+    }
 
     /**
      * Constructor for Response
