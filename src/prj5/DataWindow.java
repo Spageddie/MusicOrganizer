@@ -198,6 +198,7 @@ public class DataWindow {
         int liked2;
         int liked3;
         int liked4;
+
         Color white = new Color(255, 255, 255);
         Color border = new Color(10, 10, 10);
 
@@ -207,8 +208,6 @@ public class DataWindow {
             }
             bar = new Shape(125, 80, 5, 60, border);
             window.addShape(bar);
-            
-            
 
             window.addShape(bar);
 
