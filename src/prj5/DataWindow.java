@@ -10,6 +10,7 @@ import CS2114.*;
  *
  */
 public class DataWindow {
+    private LinkedList list;
     private GlyphOrganizer dataSorter;
     private int songNum;
     private String by;
@@ -52,10 +53,11 @@ public class DataWindow {
 
 
     /**
-     * Put (GlyphOrganizer organizer) in
+     * GlyphOrganizer organizer
      */
     public DataWindow() {
-        // dataSorter = organizer;
+// dataSorter = organizer;
+// list = dataSorter.getHobby();
 
         window = new Window("Project5");
         window.setSize(900, 600);
@@ -65,37 +67,37 @@ public class DataWindow {
         start.setBackgroundColor(Color.WHITE);
         window.addShape(start);
 
-        this.previous = new Button("< Previous");
-        this.window.addButton(previous, WindowSide.NORTH);
-        this.previous.onClick(this, "clickedPrevious");
-        this.artistSort = new Button("Sort by Artist Name");
-        this.window.addButton(artistSort, WindowSide.NORTH);
-        this.artistSort.onClick(this, "clickedArtist");
-        this.titleSort = new Button("Sort by Song Title");
-        this.window.addButton(titleSort, WindowSide.NORTH);
-        this.titleSort.onClick(this, "clickedTitle");
-        this.yearSort = new Button("Sort by Release Year");
-        this.window.addButton(yearSort, WindowSide.NORTH);
-        this.yearSort.onClick(this, "clickedYear");
-        this.genreSort = new Button("Sort by Genre");
-        this.window.addButton(genreSort, WindowSide.NORTH);
-        this.genreSort.onClick(this, "clickedGenre");
-        this.next = new Button("Next >");
-        this.window.addButton(next, WindowSide.NORTH);
-        this.next.onClick(this, "clickedNext");
+        previous = new Button("< Previous");
+        window.addButton(previous, WindowSide.NORTH);
+        previous.onClick(this, "clickedPrevious");
+        artistSort = new Button("Sort by Artist Name");
+        window.addButton(artistSort, WindowSide.NORTH);
+        artistSort.onClick(this, "clickedArtist");
+        titleSort = new Button("Sort by Song Title");
+        window.addButton(titleSort, WindowSide.NORTH);
+        titleSort.onClick(this, "clickedTitle");
+        yearSort = new Button("Sort by Release Year");
+        window.addButton(yearSort, WindowSide.NORTH);
+        yearSort.onClick(this, "clickedYear");
+        genreSort = new Button("Sort by Genre");
+        window.addButton(genreSort, WindowSide.NORTH);
+        genreSort.onClick(this, "clickedGenre");
+        next = new Button("Next >");
+        window.addButton(next, WindowSide.NORTH);
+        next.onClick(this, "clickedNext");
 
-        this.hobbyRep = new Button("Represent Hobby");
-        this.window.addButton(hobbyRep, WindowSide.SOUTH);
-        this.hobbyRep.onClick(this, "clickedHobby");
-        this.majorRep = new Button("Represent Major");
-        this.window.addButton(majorRep, WindowSide.SOUTH);
-        this.majorRep.onClick(this, "clickedMajor");
-        this.regionRep = new Button("Represent Region");
-        this.window.addButton(regionRep, WindowSide.SOUTH);
-        this.regionRep.onClick(this, "clickedRegion");
-        this.quit = new Button("Quit");
-        this.window.addButton(quit, WindowSide.SOUTH);
-        this.quit.onClick(this, "clickedQuit");
+        hobbyRep = new Button("Represent Hobby");
+        window.addButton(hobbyRep, WindowSide.SOUTH);
+        hobbyRep.onClick(this, "clickedHobby");
+        majorRep = new Button("Represent Major");
+        window.addButton(majorRep, WindowSide.SOUTH);
+        majorRep.onClick(this, "clickedMajor");
+        regionRep = new Button("Represent Region");
+        window.addButton(regionRep, WindowSide.SOUTH);
+        regionRep.onClick(this, "clickedRegion");
+        quit = new Button("Quit");
+        window.addButton(quit, WindowSide.SOUTH);
+        quit.onClick(this, "clickedQuit");
 
         by = "by";
         previous.disable();
@@ -199,12 +201,14 @@ public class DataWindow {
         Color white = new Color(255, 255, 255);
         Color border = new Color(10, 10, 10);
 
-        while (n < (songNum + 6)) {
+        while (n < (songNum + 9)) {
             if (n == (songNum + 3)) {
                 height += 150;
             }
             bar = new Shape(125, 80, 5, 60, border);
             window.addShape(bar);
+            
+            
 
             window.addShape(bar);
 
@@ -267,7 +271,7 @@ public class DataWindow {
         next.enable();
         window.removeAllShapes();
 
-        songNum -= 6;
+        songNum -= 9;
     }
 
 
@@ -280,7 +284,7 @@ public class DataWindow {
         previous.enable();
         window.removeAllShapes();
 
-        songNum += 6;
+        songNum += 9;
     }
 
 
