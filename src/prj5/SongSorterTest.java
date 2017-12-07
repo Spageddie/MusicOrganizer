@@ -11,9 +11,10 @@ public class SongSorterTest extends TestCase{
         handler.updateSongs();
         sorter = new SongSorter(handler);
     }
+    
     public void testSortByTitle() {
-        System.out.println(sorter.getSortedTitle().toString());
-    }
+        //System.out.println(sorter.getSortedTitle().toString());
+    }/*
     public void testSortByArtist() {
         System.out.println(sorter.getSortedArtist().toString());
     }
@@ -23,4 +24,5 @@ public class SongSorterTest extends TestCase{
     public void testSortByYear() {
         System.out.println(sorter.getSortedYear().toString());
     }
+    */
 }

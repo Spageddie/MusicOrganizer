@@ -20,33 +20,33 @@ public class SongSorter {
      * Basic constructor for GlyphOrganizer
      */
     public SongSorter(DataHandler datahandler) {
-        sortedTitle = new LinkedList<Song>();
-        sortedArtist = new LinkedList<Song>();
-        sortedGenre = new LinkedList<Song>();
-        sortedYear = new LinkedList<Song>();
         handler = datahandler;
         songList = handler.getSongList();
-        this.sortByTitle();
-        this.sortByArtist();
-        this.sortByGenre();
-        this.sortByYear();
+        sortedTitle = this.sortByTitle(songList);
+        System.out.println(sortedTitle.toString());
+        sortedArtist = this.sortByArtist(songList);
+        System.out.println(sortedArtist.toString());
+        sortedGenre = this.sortByGenre(songList);
+        System.out.println(sortedGenre.toString());
+        sortedYear = this.sortByYear(songList);
+        System.out.println(sortedYear.toString());
         
     }
-    public void sortByTitle() {
-        sortedTitle = songList;
-        //System.out.println(sortedTitle.toString());
-        for (int i=0; i<sortedTitle.size(); i++) {
+    public LinkedList<Song> sortByTitle(LinkedList<Song> songList) {
+        for (int i=0; i<songList.size(); i++) {
             int min = i;
-            for (int j= i+1; j<sortedTitle.size(); j++) {
-                if (sortedTitle.get(j).compareTitle(sortedTitle.get(min))<0) {
+            for (int j= i+1; j<songList.size(); j++) {
+                if (songList.get(j).compareTitle(songList.get(min))<0) {
                     min = j;
                 }
             }
-            sortedTitle.swap(min, i);
+            songList.swap(min, i);
         }
+        //System.out.println("Title: ");
+        //System.out.println(sortedTitle.toString());
+        return songList;
     }
-    public void sortByArtist() {
-        
+    public LinkedList<Song> sortByArtist(LinkedList<Song> songList) {
         for (int i=0; i<songList.size(); i++) {
             int min = i;
             for (int j= i+1; j<songList.size(); j++) {
@@ -56,10 +56,12 @@ public class SongSorter {
             }
             songList.swap(min, i);
         }
-        sortedArtist = songList;
+        return songList;
+        //System.out.println("Artist: ");
+        //System.out.println(sortedArtist.toString());
        
     }
-    public void sortByGenre() {
+    public LinkedList<Song> sortByGenre(LinkedList<Song> songList){
         for (int i=0; i<songList.size(); i++) {
             int min = i;
             for (int j= i+1; j<songList.size(); j++) {
@@ -69,9 +71,11 @@ public class SongSorter {
             }
             songList.swap(min, i);
         }
-        sortedGenre = songList;
+        return songList;
+        //System.out.println("Genre: ");
+        //System.out.println(sortedGenre.toString());
     }
-    public void sortByYear() {
+    public LinkedList<Song> sortByYear(LinkedList<Song> songList) {
         for (int i=0; i<songList.size(); i++) {
             int min = i;
             for (int j= i+1; j<songList.size(); j++) {
@@ -81,7 +85,9 @@ public class SongSorter {
             }
             songList.swap(min, i);
         }
-        sortedYear = songList;
+        return songList;
+        //System.out.println("Year: ");
+        //System.out.println(sortedYear.toString());
     }
     public LinkedList<Song> getSortedTitle(){
         return sortedTitle;
