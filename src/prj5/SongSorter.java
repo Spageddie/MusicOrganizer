@@ -19,17 +19,7 @@ public class SongSorter {
     /**
      * Basic constructor for GlyphOrganizer
      */
-    public SongSorter(DataHandler datahandler) {
-        handler = datahandler;
-        songList = handler.getSongList();
-        sortedTitle = this.sortByTitle(songList);
-        System.out.println(sortedTitle.toString());
-        sortedArtist = this.sortByArtist(songList);
-        System.out.println(sortedArtist.toString());
-        sortedGenre = this.sortByGenre(songList);
-        System.out.println(sortedGenre.toString());
-        sortedYear = this.sortByYear(songList);
-        System.out.println(sortedYear.toString());
+    public SongSorter() {
 
     }
 
@@ -44,8 +34,6 @@ public class SongSorter {
             }
             songList.swap(min, i);
         }
-        // System.out.println("Title: ");
-        // System.out.println(sortedTitle.toString());
         return songList;
     }
 
@@ -61,9 +49,6 @@ public class SongSorter {
             songList.swap(min, i);
         }
         return songList;
-        // System.out.println("Artist: ");
-        // System.out.println(sortedArtist.toString());
-
     }
 
 
@@ -78,8 +63,6 @@ public class SongSorter {
             songList.swap(min, i);
         }
         return songList;
-        // System.out.println("Genre: ");
-        // System.out.println(sortedGenre.toString());
     }
 
 
@@ -94,8 +77,6 @@ public class SongSorter {
             songList.swap(min, i);
         }
         return songList;
-        // System.out.println("Year: ");
-        // System.out.println(sortedYear.toString());
     }
 
 

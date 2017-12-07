@@ -11,7 +11,9 @@ import CS2114.*;
  */
 public class DataWindow {
     private LinkedList list;
+    private LinkedList data;
     private DataHandler dataHandle;
+    private SongSorter songSort;
     private int songNum;
     private String by;
     private Window window;
@@ -53,11 +55,11 @@ public class DataWindow {
 
 
     /**
-     * GlyphOrganizer organizer
+     * 
      */
-    public DataWindow() {
-// dataSorter = organizer;
-// list = dataSorter.getHobby();
+    public DataWindow(DataHandler da) {
+        dataHandle = da;
+        data = dataHandle.getSongList();
 
         window = new Window("Project5");
         window.setSize(900, 600);
@@ -202,62 +204,20 @@ public class DataWindow {
         Color white = new Color(255, 255, 255);
         Color border = new Color(10, 10, 10);
 
-        while (n < (songNum + 9)) {
+        while (n < (songNum + 9) && n < data.size()) {
             if (n == (songNum + 3)) {
                 height += 150;
             }
             bar = new Shape(125, 80, 5, 60, border);
             window.addShape(bar);
 
-            window.addShape(bar);
+            String tempSubtitle = data.get(n).getTitle();
+            // subtitle = new TextShape(50 + width, 100 + height, tempSubtitle);
+            // subtitle.setBackgroundColor(Color.WHITE);
 
             width += 250;
             n++;
         }
-    }
-
-
-    /**
-     * 
-     */
-    public void update() {
-        Color white = new Color(255, 255, 255);
-        Color border = new Color(10, 10, 10);
-
-        Shape pole1 = new Shape(125, 80, 5, 60, border);
-        window.addShape(pole1);
-        Shape pole2 = new Shape(125 + 250, 80, 5, 60, border);
-        window.addShape(pole2);
-        Shape pole3 = new Shape(125 + 2 * 250, 80, 5, 60, border);
-        window.addShape(pole3);
-        Shape pole4 = new Shape(125, 80 + 150, 5, 60, border);
-        window.addShape(pole4);
-        Shape pole5 = new Shape(125 + 250, 80 + 150, 5, 60, border);
-        window.addShape(pole5);
-        Shape pole6 = new Shape(125 + 2 * 250, 80 + 150, 5, 60, border);
-        window.addShape(pole6);
-        Shape pole7 = new Shape(125, 80 + 2 * 150, 5, 60, border);
-        window.addShape(pole7);
-        Shape pole8 = new Shape(125 + 250, 80 + 2 * 150, 5, 60, border);
-        window.addShape(pole8);
-        Shape pole9 = new Shape(125 + 2 * 250, 80 + 2 * 150, 5, 60, border);
-        window.addShape(pole9);
-
-        this.sTitle = new TextShape(75, 35, "Call Me Maybe");
-        sTitle.setBackgroundColor(white);
-        this.window.addShape(sTitle);
-        this.sArtist = new TextShape(60, 55, "by Carly Rae Jepsen");
-        sArtist.setBackgroundColor(white);
-        this.window.addShape(sArtist);
-        r1 = new Shape(50, 80, 145, 15, graphColors[0]);
-        this.window.addShape(r1);
-        r2 = new Shape(45, 95, 95, 15, graphColors[1]);
-        this.window.addShape(r2);
-        r3 = new Shape(55, 110, 120, 15, graphColors[2]);
-        this.window.addShape(r3);
-        r4 = new Shape(38, 125, 110, 15, graphColors[3]);
-        this.window.addShape(r4);
-
     }
 
 
@@ -293,6 +253,12 @@ public class DataWindow {
      * @param b
      */
     public void clickedArtist(Button b) {
+        String choice = legend.getText();
+        list = songSort.sortByArtist(dataHandle.getSongList());
+        songNum = 0;
+        previous.disable();
+        next.enable();
+        window.removeAllShapes();
 
     }
 

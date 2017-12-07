@@ -154,7 +154,7 @@ public class DataHandler {
                 else if (major.equals("Other Engineering")) {
                     heardCountEng++;
                 }
-                else if(major.equals("Other")) {
+                else if (major.equals("Other")) {
                     heardCountOther++;
                 }
                 // regions
