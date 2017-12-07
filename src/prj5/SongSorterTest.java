@@ -13,8 +13,9 @@ public class SongSorterTest extends TestCase{
     }
     
     public void testSortByTitle() {
-        //System.out.println(sorter.getSortedTitle().toString());
-    }/*
+        System.out.println(sorter.getSortedTitle().toString());
+    }
+    /*
     public void testSortByArtist() {
         System.out.println(sorter.getSortedArtist().toString());
     }
