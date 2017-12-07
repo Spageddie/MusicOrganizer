@@ -1,20 +1,26 @@
 package prj5;
 
-
 public class LinkedList<T> {
     protected Node<T> head;
     private int size;
+
+
     public LinkedList() {
         head = null;
         size = 0;
     }
+
+
     /**
      * Gets size of Linkedlist
+     * 
      * @return the size of LinkedList
      */
     public int size() {
         return size;
     }
+
+
     /**
      * Removes all elements from list
      */
@@ -25,13 +31,18 @@ public class LinkedList<T> {
         }
         size = 0;
     }
+
+
     /**
      * Checks if array is empty
+     * 
      * @return true if array is empty
      */
     public boolean isEmpty() {
-        return size==0;
+        return size == 0;
     }
+
+
     /**
      * Adds the object to the position in the list
      *
@@ -118,8 +129,11 @@ public class LinkedList<T> {
         }
         size++;
     }
+
+
     /**
      * Swaps the data of two nodes
+     * 
      * @param index1
      * @param index2
      */
@@ -129,13 +143,15 @@ public class LinkedList<T> {
             firstNode = firstNode.next();
         }
         Node<T> secondNode = head;
-        for (int i=0; i<index2; i++) {
+        for (int i = 0; i < index2; i++) {
             secondNode = secondNode.next();
         }
         T data = firstNode.getData();
         firstNode.setData(secondNode.getData());
         secondNode.setData(data);
     }
+
+
     /**
      * Removes the first instance of the given object from the list
      *
@@ -262,6 +278,8 @@ public class LinkedList<T> {
 
         return false;
     }
+
+
     /**
      * Returns a string representation of the list If a list contains A, B, and
      * C, the following should be returned "{A, B, C}" (Without the quotations)
@@ -342,8 +360,5 @@ public class LinkedList<T> {
 
         return false;
     }
-
-
-
 
 }

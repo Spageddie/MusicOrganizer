@@ -7,7 +7,6 @@ import java.io.FileNotFoundException;
 /**
  * Class that reads the file data
  * 
- * @author Eddie Dean
  * @author Matthew Marquez (mmarquez)
  * @version 2017.11.16
  *
@@ -69,7 +68,7 @@ public class ResponseReader {
         while (scan.hasNextLine()) {
             String line = scan.nextLine();
             String[] strings = line.split("\\s*,\\s*");
-            while (strings.length<=30) {
+            while (strings.length <= 30) {
                 line = scan.nextLine();
                 strings = line.split("\\s*,\\s*");
             }
@@ -80,18 +79,18 @@ public class ResponseReader {
             String hobby = strings[4];
             Response response = new Response(id, date, major, hobby, region);
             responses.add(response);
-            for(int i=5; i<strings.length-1; i=i+2) {
-                scanTwoLines(strings[i], strings[i+1], response);
+            for (int i = 5; i < strings.length - 1; i = i + 2) {
+                scanTwoLines(strings[i], strings[i + 1], response);
             }
 
         }
 
         scan.close();
-        for (int i=0; i<responses.size(); i++) {
-            if (responses.get(i).getHeardSongList().size()<59) {
+        for (int i = 0; i < responses.size(); i++) {
+            if (responses.get(i).getHeardSongList().size() < 59) {
                 responses.remove(i);
             }
-            if (responses.get(i).getLikesSongList().size()<59) {
+            if (responses.get(i).getLikesSongList().size() < 59) {
                 responses.remove(i);
             }
         }
@@ -101,7 +100,8 @@ public class ResponseReader {
 
 
     /**
-     * helper method that scans two columns (both columns correspond to same song)
+     * helper method that scans two columns (both columns correspond to same
+     * song)
      * and adds the strings to the corresponding list in response
      * 
      * @param firstColumn
@@ -109,7 +109,10 @@ public class ResponseReader {
      * @param secondColumn
      *            second column of responses
      */
-    private void scanTwoLines(String firstColumn, String secondColumn, Response response) {
+    private void scanTwoLines(
+        String firstColumn,
+        String secondColumn,
+        Response response) {
         response.getHeardSongList().add(firstColumn);
         response.getLikesSongList().add(secondColumn);
 

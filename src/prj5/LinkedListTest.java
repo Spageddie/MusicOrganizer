@@ -1,7 +1,6 @@
 package prj5;
 /**
  * Test class for LinkedList 
-
  * @author Matthew Marquez (mmarquez)
  * @version 2015.11.15
  *
@@ -56,34 +55,64 @@ public class LinkedListTest extends TestCase{
         listCinA.clear();
         assertTrue(listCinA.isEmpty());
     }
+    /**
+     * Tests the add(index) method
+     */
     public void testAddIndex() {
         
     }
+    /**
+     * tests the add() method
+     */
     public void testAdd() {
         
     }
+    /**
+     * Tests the remove method
+     */
     public void testRemove() {
         
     }
+    /**
+     * Tests the remove(index) method
+     */
     public void testRemoveIndex() {
         
     }
+    /**
+     * Tests the get method
+     */
     public void testGet() {
         
     }
+    /**
+     * Tests the contains() method
+     */
     public void testContains() {
         
     }
+    /**
+     * Tests the toString() method
+     */
     public void testToString() {
         System.out.println(listCinA.toString());
         System.out.println(listA.toString());
     }
+    /**
+     * Tests the toArray() method
+     */
     public void testToArray() {
         
     }
+    /**
+     * Tests the equals() method
+     */
     public void testEquals() {
         
     }
+    /**
+     * Tests the swap() method
+     */
     public void testSwap() {
         listBinA.swap(0, 1);
         System.out.println(listBinA.toString());
