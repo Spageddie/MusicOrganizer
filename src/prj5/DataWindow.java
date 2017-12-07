@@ -11,7 +11,7 @@ import CS2114.*;
  */
 public class DataWindow {
     private LinkedList list;
-    private GlyphOrganizer dataSorter;
+    private DataHandler dataHandle;
     private int songNum;
     private String by;
     private Window window;
@@ -190,14 +190,14 @@ public class DataWindow {
         int width = 0;
         int barSpacingHeight = 150;
         int barSpacingWidth = 250;
-        int heard1;
-        int heard2;
-        int heard3;
-        int heard4;
-        int liked1;
-        int liked2;
-        int liked3;
-        int liked4;
+        int heard1 = 0;
+        int heard2 = 0;
+        int heard3 = 0;
+        int heard4 = 0;
+        int liked1 = 0;
+        int liked2 = 0;
+        int liked3 = 0;
+        int liked4 = 0;
 
         Color white = new Color(255, 255, 255);
         Color border = new Color(10, 10, 10);

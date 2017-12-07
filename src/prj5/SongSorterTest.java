@@ -12,5 +12,4 @@ public class SongSorterTest extends TestCase{
         sorter = new SongSorter(handler);
     }
     
-    
 }

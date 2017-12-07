@@ -84,7 +84,7 @@ public class SongSorter {
     }
     /**
      * Getter method for dataHandler
-     * @return handler
+     * @return
      */
     public DataHandler getDataHandler() {
         return handler;
