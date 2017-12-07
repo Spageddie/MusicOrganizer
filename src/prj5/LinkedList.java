@@ -362,7 +362,7 @@ public class LinkedList<T> {
         for (int i = 0; i < songList.size(); i++) {
             int min = i;
             for (int j = i + 1; j < songList.size(); j++) {
-                if (songList.get(j).compareTitle(songList.get(min)) < 0) {
+                if (songList.get(j).compareYear(songList.get(min)) < 0) {
                     min = j;
                 }
             }
@@ -419,7 +419,7 @@ public class LinkedList<T> {
         for (int i = 0; i < songList.size(); i++) {
             int min = i;
             for (int j = i + 1; j < songList.size(); j++) {
-                if (songList.get(j).compareYear(songList.get(min)) < 0) {
+                if (songList.get(j).compareTitle(songList.get(min)) < 0) {
                     min = j;
                 }
             }

@@ -13,6 +13,8 @@ public class LinkedListTest extends TestCase {
     private LinkedList<String> listBinA;
     private LinkedList<String> listCinA;
     private LinkedList<String> listD;
+    private LinkedList<Song> songList;
+    private LinkedList<Song> songList2;
 
 
     /**
@@ -23,6 +25,8 @@ public class LinkedListTest extends TestCase {
         listBinA = new LinkedList<String>();
         listCinA = new LinkedList<String>();
         listD = new LinkedList<String>();
+        songList = new LinkedList<Song>();
+        songList2 = new LinkedList<Song>();
 
         listBinA.add("Hello");
         listBinA.add("Fun");
@@ -31,6 +35,15 @@ public class LinkedListTest extends TestCase {
         listCinA.add("Games");
         listCinA.add("TV");
         listCinA.add("Comics");
+
+        Song song1 = new Song("apples", "Metallica", "1800", "rock");
+        Song song2 = new Song("banana", "Logic", "2030", "rap");
+        Song song3 = new Song("Zebra Tiger", "Metallica", "5", "heavy");
+
+        songList.add(song1);
+        songList.add(song2);
+        songList.add(song3);
+        
 
     }
 
@@ -52,7 +65,7 @@ public class LinkedListTest extends TestCase {
         listCinA.clear();
         assertTrue(listCinA.isEmpty());
         listCinA.clear();
-        
+
     }
 
 
@@ -204,5 +217,60 @@ public class LinkedListTest extends TestCase {
         test.add("Hello");
         test.add("Bye");
         assertTrue(listBinA.equals(test));
+    }
+
+
+    /**
+     * Tests the sortByTitle() method
+     */
+    public void testSortByTitle() {
+        this.songList = songList.sortByTitle(songList);
+        Song song1 = new Song("apples", "Metallica", "1800", "rock");
+        Song song2 = new Song("banana", "Logic", "2030", "rap");
+        Song song3 = new Song("Zebra Tiger", "Metallica", "5", "heavy");
+        songList2.add(song1);
+        songList2.add(song2);
+        songList2.add(song3);
+        assertFalse(songList.equals(songList2));
+        
+    }
+    /**
+     * Tests the sortByArtist() method
+     */
+    public void testSortByArtist() {
+        songList = songList.sortByArtist(songList);
+        Song song1 = new Song("apples", "Metallica", "1800", "rock");
+        Song song2 = new Song("banana", "Logic", "2030", "rap");
+        Song song3 = new Song("Zebra Tiger", "Metallica", "5", "heavy");
+        songList2.add(song2);
+        songList2.add(song1);
+        songList2.add(song3);
+        assertFalse(songList.equals(songList2));
+    }
+    /**
+     * Tests the sortByGenre() method
+     */
+    public void testSortByGenre() {
+        songList = songList.sortByGenre(songList);
+        Song song1 = new Song("apples", "Metallica", "1800", "rock");
+        Song song2 = new Song("banana", "Logic", "2030", "rap");
+        Song song3 = new Song("Zebra Tiger", "Metallica", "5", "heavy");
+        songList2.add(song3);
+        songList2.add(song2);
+        songList2.add(song1);
+        assertFalse(songList.equals(songList2));
+    }
+    /**
+     * Tests the sortByYear() method
+     */
+    public void testSortByYear() {
+        songList = songList.sortByYear(songList);
+        Song song1 = new Song("apples", "Metallica", "1800", "rock");
+        Song song2 = new Song("banana", "Logic", "2030", "rap");
+        Song song3 = new Song("Zebra Tiger", "Metallica", "5", "heavy");
+        songList2.add(song3);
+        songList2.add(song1);
+        songList2.add(song2);
+        assertFalse(songList.equals(songList2));
     }
 }

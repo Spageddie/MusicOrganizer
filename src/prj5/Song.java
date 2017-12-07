@@ -77,61 +77,63 @@ public class Song {
      * specificiation in one array) so you can cut down parameters by two
      * 
      * @param title
-     *      title of song
+     *            title of song
      * @param artist
-     *      artist of song
+     *            artist of song
      * @param year
-     *      year song was made
+     *            year song was made
      * @param genre
-     *      genre of song
+     *            genre of song
      * @param heardPercentCS
-     *      percent of people who heard song in cs major
+     *            percent of people who heard song in cs major
      * @param heardPercentMath
-     *      percent of people who heard song in math major
+     *            percent of people who heard song in math major
      * @param heardPercentEng
-     *      percent of people who heard song in other engineering major
+     *            percent of people who heard song in other engineering major
      * @param heardPercentOther
-     *      percent of people who heard song in other major
+     *            percent of people who heard song in other major
      * @param heardPercentSE
-     *      percent of people who heard song in southeast region
+     *            percent of people who heard song in southeast region
      * @param heardPercentNE
-     *      percent of people who heard song in northeast region
+     *            percent of people who heard song in northeast region
      * @param heardPercentUS
-     *      percent of people who heard song in US other than SE and NE region
+     *            percent of people who heard song in US other than SE and NE
+     *            region
      * @param heardPercentOut
-     *      percent of people who heard song outside of US
+     *            percent of people who heard song outside of US
      * @param heardPercentMusic
-     *      percent of people who heard song with music hobby
+     *            percent of people who heard song with music hobby
      * @param heardPercentSports
-     *      percent of people who heard song with sports hobby
+     *            percent of people who heard song with sports hobby
      * @param heardPercentReading
-     *      percent of people who heard song with reading hobby
+     *            percent of people who heard song with reading hobby
      * @param heardPercentArt
-     *      percent of people who heard song with art hobby
+     *            percent of people who heard song with art hobby
      * @param likePercentCS
-     *      percent of people who like song in cs major
+     *            percent of people who like song in cs major
      * @param likePercentMath
-     *      percent of people who like song in math major
+     *            percent of people who like song in math major
      * @param likePercentEng
-     *      percent of people who like song in other engineering major
+     *            percent of people who like song in other engineering major
      * @param likePercentOther
-     *      percent of people who like song in other major
+     *            percent of people who like song in other major
      * @param likePercentSE
-     *      percent of people who like song in southeast region
+     *            percent of people who like song in southeast region
      * @param likePercentNE
-     *      percent of people who like song in northeast region
+     *            percent of people who like song in northeast region
      * @param likePercentUS
-     *      percent of people who like song in US other than SE and NE region
+     *            percent of people who like song in US other than SE and NE
+     *            region
      * @param likePercentOut
-     *      percent of people who like song outside of US
+     *            percent of people who like song outside of US
      * @param likePercentMusic
-     *      percent of people who like song in music hobby
+     *            percent of people who like song in music hobby
      * @param likePercentSports
-     *      percent of people who like song in sports hobby 
+     *            percent of people who like song in sports hobby
      * @param likePercentReading
-     *      percent of people who like song in reading hobby
+     *            percent of people who like song in reading hobby
      * @param likePercentArt
-     *      percent of people who like song in art hobby
+     *            percent of people who like song in art hobby
      */
     public Song(
         String title,
@@ -877,4 +879,5 @@ public class Song {
         builder.append(" Reading Like " + likePercentReading + "\n");
         return builder.toString();
     }
+
 }

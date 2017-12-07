@@ -120,21 +120,15 @@ public class SongTest extends TestCase {
     public void testCompareYear() {
         assertTrue(song1.compareYear(song2) < 0);
     }
+
+
     /**
      * Tests toString() method
      */
     public void testToString() {
-        Song song3 =  new Song(
-            "title",
-            "artist",
-            "1000",
-            "rock",
-            0.5, 0.6, 0.5, 0.7,
-            0.9, 0.4, 0.6, 0.4,
-            0.9, 0.7, 0.6, 0.2,
-            0.4, 0.5, 0.4, 0.6,
-            0.85, 0.37, 0.54, 0.2,
-            0.8, 0.6, 0.51, 0.05);
+        Song song3 = new Song("title", "artist", "1000", "rock", 0.5, 0.6, 0.5,
+            0.7, 0.9, 0.4, 0.6, 0.4, 0.9, 0.7, 0.6, 0.2, 0.4, 0.5, 0.4, 0.6,
+            0.85, 0.37, 0.54, 0.2, 0.8, 0.6, 0.51, 0.05);
         String test = "title artist 1000 rock CS Heard 0.5 CS Like 0.4 "
             + "Math Heard 0.6 Math Like 0.5 Eng Heard 0.5 Eng Like 0.4 "
             + "Other Heard 0.7 Other Like 0.6 SE Heard 0.9 SE Like 0.85 "
@@ -144,4 +138,5 @@ public class SongTest extends TestCase {
             + "Reading Heard 0.6 Reading Like 0.51";
         assertFalse(test.equals(song3.toString()));
     }
+
 }
