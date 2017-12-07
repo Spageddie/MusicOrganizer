@@ -22,10 +22,15 @@ public class Response {
      * Constructor for Response without the linkedLists parameters
      * 
      * @param identification
+     *      id number of student
      * @param dateName
+     *      date survey completed
      * @param majorName
+     *      major of student
      * @param hobbyName
+     *      hobby of student
      * @param regionName
+     *      region of student
      */
     public Response(
         String identification,
@@ -67,7 +72,7 @@ public class Response {
         String majorName,
         String hobbyName,
         String regionName,
-        LinkedList<String> HeardSongListForOneResponse,
+        LinkedList<String> heardSongListForOneResponse,
         LinkedList<String> likesSongListForOneResponse) {
 
         id = identification;
@@ -75,7 +80,7 @@ public class Response {
         major = majorName;
         hobby = hobbyName;
         region = regionName;
-        hasHeardSong = HeardSongListForOneResponse;
+        hasHeardSong = heardSongListForOneResponse;
         likesSong = likesSongListForOneResponse;
 
     }

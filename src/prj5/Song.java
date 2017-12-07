@@ -77,33 +77,61 @@ public class Song {
      * specificiation in one array) so you can cut down parameters by two
      * 
      * @param title
+     *      title of song
      * @param artist
+     *      artist of song
      * @param year
+     *      year song was made
      * @param genre
+     *      genre of song
      * @param heardPercentCS
+     *      percent of people who heard song in cs major
      * @param heardPercentMath
+     *      percent of people who heard song in math major
      * @param heardPercentEng
+     *      percent of people who heard song in other engineering major
      * @param heardPercentOther
+     *      percent of people who heard song in other major
      * @param heardPercentSE
+     *      percent of people who heard song in southeast region
      * @param heardPercentNE
+     *      percent of people who heard song in northeast region
      * @param heardPercentUS
+     *      percent of people who heard song in US other than SE and NE region
      * @param heardPercentOut
+     *      percent of people who heard song outside of US
      * @param heardPercentMusic
+     *      percent of people who heard song with music hobby
      * @param heardPercentSports
+     *      percent of people who heard song with sports hobby
      * @param heardPercentReading
+     *      percent of people who heard song with reading hobby
      * @param heardPercentArt
+     *      percent of people who heard song with art hobby
      * @param likePercentCS
+     *      percent of people who like song in cs major
      * @param likePercentMath
+     *      percent of people who like song in math major
      * @param likePercentEng
+     *      percent of people who like song in other engineering major
      * @param likePercentOther
+     *      percent of people who like song in other major
      * @param likePercentSE
+     *      percent of people who like song in southeast region
      * @param likePercentNE
+     *      percent of people who like song in northeast region
      * @param likePercentUS
+     *      percent of people who like song in US other than SE and NE region
      * @param likePercentOut
+     *      percent of people who like song outside of US
      * @param likePercentMusic
+     *      percent of people who like song in music hobby
      * @param likePercentSports
+     *      percent of people who like song in sports hobby 
      * @param likePercentReading
+     *      percent of people who like song in reading hobby
      * @param likePercentArt
+     *      percent of people who like song in art hobby
      */
     public Song(
         String title,
@@ -448,7 +476,7 @@ public class Song {
     /**
      * setter method for heardPercentCS
      * 
-     * @param percent
+     * @param heardPercentCS
      *            heard for cs major
      */
     public void setHeardPercentCS(double heardPercentCS) {
@@ -459,7 +487,7 @@ public class Song {
     /**
      * Setter method for heardPercentMath
      * 
-     * @param percent
+     * @param heardPercentMath
      *            heard for math major
      */
     public void setHeardPercentMath(double heardPercentMath) {
@@ -470,7 +498,7 @@ public class Song {
     /**
      * Setter method for heardPercentEng
      * 
-     * @param percent
+     * @param heardPercentEng
      *            heard for other engineering major
      */
     public void setHeardPercentEng(double heardPercentEng) {
@@ -481,7 +509,7 @@ public class Song {
     /**
      * Setter method for heardPercentOther
      * 
-     * @param percent
+     * @param heardPercentOther
      *            heard for other major
      */
     public void setHeardPercentOther(double heardPercentOther) {
@@ -492,7 +520,7 @@ public class Song {
     /**
      * Setter method for heardPercentSE
      * 
-     * @param percent
+     * @param heardPercentSE
      *            heard for southeast region
      */
     public void setHeardPercentSE(double heardPercentSE) {
@@ -503,7 +531,7 @@ public class Song {
     /**
      * Setter method for heardPercentNE
      * 
-     * @param percent
+     * @param heardPercentNE
      *            heard for northeast region
      */
     public void setHeardPercentNE(double heardPercentNE) {
@@ -514,7 +542,7 @@ public class Song {
     /**
      * Setter method for heardPercentUs
      * 
-     * @param percent
+     * @param heardPercentUS
      *            heard for other region in US
      */
     public void setHeardPercentUS(double heardPercentUS) {
@@ -525,7 +553,7 @@ public class Song {
     /**
      * Setter method for heardPercentOut
      * 
-     * @param percent
+     * @param heardPercentOut
      *            heard for regions out of US
      */
     public void setHeardPercentOut(double heardPercentOut) {
@@ -536,7 +564,7 @@ public class Song {
     /**
      * Setter method for heardPercentMusic
      * 
-     * @param percent
+     * @param heardPercentMusic
      *            heard for music hobby
      */
     public void setHeardPercentMusic(double heardPercentMusic) {
@@ -547,7 +575,7 @@ public class Song {
     /**
      * Setter method for heardPercentSports
      * 
-     * @param percent
+     * @param heardPercentSports
      *            heard for sports hobby
      */
     public void setHeardPercentSports(double heardPercentSports) {
@@ -558,7 +586,7 @@ public class Song {
     /**
      * Setter method for heardPercentArt
      * 
-     * @param percent
+     * @param heardPercentArt
      *            heard for art hobby
      */
     public void setHeardPercentArt(double heardPercentArt) {
@@ -569,7 +597,7 @@ public class Song {
     /**
      * Setter method for heardPercentReading
      * 
-     * @param percent
+     * @param heardPercentReading
      *            heard for reading hobby
      */
     public void setHeardPercentReading(double heardPercentReading) {
@@ -580,7 +608,7 @@ public class Song {
     /**
      * Setter method for likePercentCS
      * 
-     * @param percent
+     * @param likePercentCS
      *            like for cs major
      */
     public void setLikePercentCS(double likePercentCS) {
@@ -591,7 +619,7 @@ public class Song {
     /**
      * Setter method for likePercentMath
      * 
-     * @param percent
+     * @param likePercentMath
      *            like for math major
      */
     public void setLikePercentMath(double likePercentMath) {
@@ -602,7 +630,7 @@ public class Song {
     /**
      * Setter method for likePercentEng
      * 
-     * @param percent
+     * @param likePercentEng
      *            like for other engineering major
      */
     public void setLikePercentEng(double likePercentEng) {
@@ -613,7 +641,7 @@ public class Song {
     /**
      * Setter method for likePercentOther
      * 
-     * @param percent
+     * @param likePercentOther
      *            like for other major
      */
     public void setLikePercentOther(double likePercentOther) {
@@ -624,7 +652,7 @@ public class Song {
     /**
      * Setter method for likePercentSE
      * 
-     * @param percent
+     * @param likePercentSE
      *            like for southeast region
      */
     public void setLikePercentSE(double likePercentSE) {
@@ -635,7 +663,7 @@ public class Song {
     /**
      * Setter method for likePercentNE
      * 
-     * @param percent
+     * @param likePercentNE
      *            like for northeast region
      */
     public void setLikePercentNE(double likePercentNE) {
@@ -646,7 +674,7 @@ public class Song {
     /**
      * Setter method for likePercentUs
      * 
-     * @param percent
+     * @param likePercentUS
      *            like for other region in US
      */
     public void setLikePercentUS(double likePercentUS) {
@@ -657,7 +685,7 @@ public class Song {
     /**
      * Setter method for likePercentOut
      * 
-     * @param percent
+     * @param likePercentOut
      *            like for regions out of US
      */
     public void setLikePercentOut(double likePercentOut) {
@@ -668,7 +696,7 @@ public class Song {
     /**
      * Setter method for likePercentMusic
      * 
-     * @param percent
+     * @param likePercentMusic
      *            like for music hobby
      */
     public void setLikePercentMusic(double likePercentMusic) {
@@ -679,7 +707,7 @@ public class Song {
     /**
      * Setter method for likePercentSports
      * 
-     * @param percent
+     * @param likePercentSports
      *            like for sports hobby
      */
     public void setLikePercentSports(double likePercentSports) {
@@ -690,7 +718,7 @@ public class Song {
     /**
      * Setter method for likePercentArt
      * 
-     * @param percent
+     * @param likePercentArt
      *            like for art hobby
      */
     public void setLikePercentArt(double likePercentArt) {
@@ -701,7 +729,7 @@ public class Song {
     /**
      * Setter method for heardPercentReading
      * 
-     * @param percent
+     * @param likePercentReading
      *            heard for reading hobby
      */
     public void setLikePercentReading(double likePercentReading) {
@@ -752,10 +780,12 @@ public class Song {
         this.genre = genre;
     }
 
+
     /**
      * Compare method for title
+     * 
      * @param other
-     *      Song comparing to
+     *            Song comparing to
      * @return positive number if greater
      *         zero if equal
      *         negative if less than
@@ -764,10 +794,12 @@ public class Song {
         return this.title.compareTo(other.getTitle());
     }
 
+
     /**
      * Compare method for artist
+     * 
      * @param other
-     *      Song comparing to
+     *            Song comparing to
      * @return positive number if greater
      *         zero if equal
      *         negative if less than
@@ -776,10 +808,12 @@ public class Song {
         return this.artist.compareTo(other.getArtist());
     }
 
+
     /**
      * Compare method for genre
+     * 
      * @param other
-     *      Song comparing to
+     *            Song comparing to
      * @return positive number if greater
      *         zero if equal
      *         negative if less than
@@ -788,10 +822,12 @@ public class Song {
         return this.genre.compareTo(other.getGenre());
     }
 
+
     /**
      * Compare method for year
+     * 
      * @param other
-     *      Song comparing to
+     *            Song comparing to
      * @return positive number if greater
      *         zero if equal
      *         negative if less than
@@ -800,8 +836,10 @@ public class Song {
         return this.year.compareTo(other.getYear());
     }
 
+
     /**
      * Represents Song as a string
+     * 
      * @return string representation
      */
     public String toString() {

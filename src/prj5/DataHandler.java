@@ -10,16 +10,20 @@ import java.io.FileNotFoundException;
  *
  */
 public class DataHandler {
-    private ResponseReader reader;
+    
     private LinkedList<Song> songList;
     private LinkedList<Response> responseList;
 
     /**
      * Constructor for DataHandler
+     * @param responsesFileName
+     *      file name of the responses survey
+     * @param songListFileName
+     *      file name of the songs
      */
     public DataHandler(String responsesFileName, String songListFileName)
         throws FileNotFoundException {
-        reader = new ResponseReader(responsesFileName, songListFileName);
+        ResponseReader reader = new ResponseReader(responsesFileName, songListFileName);
         songList = reader.getSongList();
         responseList = reader.getResponseList();
     }
@@ -53,7 +57,8 @@ public class DataHandler {
     /**
      * Finds percentages of all majors, regions, and hobbies for one song at
      * specified index
-     * @param the index of the song you are finding percentage of
+     * @param songNumber
+     *      the index of the song you are finding percentage of
      */
     public void findPercentageOfSong(int songNumber) {
         double totalCS = 0;

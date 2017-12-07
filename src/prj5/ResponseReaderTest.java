@@ -26,7 +26,7 @@ public class ResponseReaderTest extends TestCase {
      * Tests the readResponses() method
      */
     public void testReadResponses() {
-        assertEquals(reader.getResponseList().get(0).getId(),"1");
+        assertEquals(reader.getResponseList().get(0).getId(), "1");
     }
 
 

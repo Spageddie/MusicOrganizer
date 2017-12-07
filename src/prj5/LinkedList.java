@@ -8,12 +8,15 @@ package prj5;
  * @param <T>
  */
 public class LinkedList<T> {
-    protected Node<T> head;
+    /**
+     * Head node for a linkedList
+     */
+    private Node<T> head;
     private int size;
 
 
     /**
-     * 
+     * Linked List default constructor
      */
     public LinkedList() {
         head = null;
@@ -146,7 +149,9 @@ public class LinkedList<T> {
      * Swaps the data of two nodes
      * 
      * @param index1
+     *      first index you are swapping
      * @param index2
+     *      second index you are swapping
      */
     public void swap(int index1, int index2) {
         Node<T> firstNode = head;

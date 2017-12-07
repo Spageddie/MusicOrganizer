@@ -1,5 +1,6 @@
 package prj5;
 
+import student.TestCase;
 /**
  * Test class for LinkedList
  * 
@@ -7,8 +8,6 @@ package prj5;
  * @version 2015.11.15
  *
  */
-import student.TestCase;
-
 public class LinkedListTest extends TestCase {
     private LinkedList<LinkedList> listA;
     private LinkedList<String> listBinA;
