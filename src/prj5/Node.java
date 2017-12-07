@@ -45,6 +45,11 @@ public class Node<T> {
     public T getData() {
         return this.data;
     }
+    /**
+     * Sets the data for a node
+     * @param data 
+     *      the data you are putting in
+     */
     public void setData(T anEntry) {
         data = anEntry;
     }
