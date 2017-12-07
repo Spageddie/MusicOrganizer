@@ -45,14 +45,6 @@ public class DataWindow {
     private Shape liked2;
     private Shape liked3;
     private Shape liked4;
-// private float percentHeard1;
-// private float percentHeard2;
-// private float percentHeard3;
-// private float percentHeard4;
-// private float percentLiked1;
-// private float percentLiked2;
-// private float percentLiked3;
-// private float percentLiked4;
 
 
     /**
@@ -101,7 +93,7 @@ public class DataWindow {
         quit = new Button("Quit");
         window.addButton(quit, WindowSide.SOUTH);
         quit.onClick(this, "clickedQuit");
-        
+
         songList = dataHandle.getSongList();
 
         previous.disable();
@@ -202,7 +194,7 @@ public class DataWindow {
         double percentLiked2 = 0;
         double percentLiked3 = 0;
         double percentLiked4 = 0;
-        //String sLegend = legend.getText();
+        // String sLegend = legend.getText();
 
         Color white = new Color(255, 255, 255);
         Color border = new Color(10, 10, 10);
@@ -249,19 +241,19 @@ public class DataWindow {
 
             heard1 = new Shape(barSpacingWidth + width + 5, 50 + height,
                 (int)(125 * percentHeard1), 15, new Color(255, 51, 255));
-            heard2 = new Shape(barSpacingWidth + width + 5, 50 + height,
+            heard2 = new Shape(barSpacingWidth + width + 5, 65 + height,
                 (int)(125 * percentHeard1), 15, new Color(51, 51, 255));
-            heard3 = new Shape(barSpacingWidth + width + 5, 50 + height,
+            heard3 = new Shape(barSpacingWidth + width + 5, 80 + height,
                 (int)(125 * percentHeard1), 15, new Color(255, 153, 51));
-            heard4 = new Shape(barSpacingWidth + width + 5, 50 + height,
+            heard4 = new Shape(barSpacingWidth + width + 5, 95 + height,
                 (int)(125 * percentHeard1), 15, new Color(51, 255, 51));
             liked1 = new Shape(barSpacingWidth + width + 5, 50 + height,
                 (int)(125 * percentHeard1), 15, new Color(255, 51, 255));
-            liked2 = new Shape(barSpacingWidth + width + 5, 50 + height,
+            liked2 = new Shape(barSpacingWidth + width + 5, 65 + height,
                 (int)(125 * percentHeard1), 15, new Color(51, 51, 255));
-            liked3 = new Shape(barSpacingWidth + width + 5, 50 + height,
+            liked3 = new Shape(barSpacingWidth + width + 5, 80 + height,
                 (int)(125 * percentHeard1), 15, new Color(255, 153, 51));
-            liked4 = new Shape(barSpacingWidth + width + 5, 50 + height,
+            liked4 = new Shape(barSpacingWidth + width + 5, 95 + height,
                 (int)(125 * percentHeard1), 15, new Color(51, 255, 51));
 
             String tempTitle = temps1.getTitle();
@@ -270,7 +262,16 @@ public class DataWindow {
             String tempArtist = temps1.getArtist();
             artist = new TextShape(50 + width, 100 + height, tempArtist);
             artist.setBackgroundColor(Color.WHITE);
-
+            window.addShape(title);
+            window.addShape(artist);
+            window.addShape(heard1);
+            window.addShape(heard2);
+            window.addShape(heard3);
+            window.addShape(heard4);
+            window.addShape(liked1);
+            window.addShape(liked2);
+            window.addShape(liked3);
+            window.addShape(liked4);
             width += barSpacingWidth;
             n++;
         }
