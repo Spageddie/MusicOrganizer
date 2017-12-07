@@ -753,26 +753,78 @@ public class Song {
     }
 
 
+<<<<<<< HEAD
+=======
+    /**
+     * Method that compares the titles of two songs
+     * 
+     * @param other
+     *            the song you are comparing
+     * @return integer, negative if less than,
+     *         0 if equal, positive if greater than
+     */
+>>>>>>> b6415af3eda6834ba8c8ee62e14292a4971f4412
     public int compareTitle(Song other) {
         return this.title.compareTo(other.getTitle());
     }
 
 
+<<<<<<< HEAD
+=======
+    /**
+     * Method that compares the artist of two songs
+     * 
+     * @param other
+     *            the song you are comparing
+     * @return integer, negative if less than,
+     *         0 if equal, positive if greater than
+     */
+>>>>>>> b6415af3eda6834ba8c8ee62e14292a4971f4412
     public int compareArtist(Song other) {
         return this.artist.compareTo(other.getArtist());
     }
 
 
+<<<<<<< HEAD
+=======
+    /**
+     * Method that compares the genre of two songs
+     * 
+     * @param other
+     *            the song you are comparing
+     * @return integer, negative if less than,
+     *         0 if equal, positive if greater than
+     */
+>>>>>>> b6415af3eda6834ba8c8ee62e14292a4971f4412
     public int compareGenre(Song other) {
         return this.genre.compareTo(other.getGenre());
     }
 
 
+<<<<<<< HEAD
+=======
+    /**
+     * Method that compares the year of two songs
+     * 
+     * @param other
+     *            the song you are comparing
+     * @return integer, negative if less than,
+     *         0 if equal, positive if greater than
+     */
+>>>>>>> b6415af3eda6834ba8c8ee62e14292a4971f4412
     public int compareYear(Song other) {
         return this.year.compareTo(other.getYear());
     }
 
 
+<<<<<<< HEAD
+=======
+    /**
+     * Represents the Song as a string
+     * 
+     * @return string representation
+     */
+>>>>>>> b6415af3eda6834ba8c8ee62e14292a4971f4412
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append(title + " ");

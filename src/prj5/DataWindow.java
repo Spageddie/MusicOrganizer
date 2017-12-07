@@ -211,7 +211,7 @@ public class DataWindow {
             bar = new Shape(125, 80, 5, 60, border);
             window.addShape(bar);
 
-            String tempSubtitle = data.get(n).getTitle();
+            // String tempSubtitle = data.
             // subtitle = new TextShape(50 + width, 100 + height, tempSubtitle);
             // subtitle.setBackgroundColor(Color.WHITE);
 
@@ -242,6 +242,7 @@ public class DataWindow {
     public void clickedNext(Button b) {
         previous.enable();
         window.removeAllShapes();
+        String sLegend = legend.getText();
 
         songNum += 9;
     }
@@ -289,7 +290,6 @@ public class DataWindow {
      * @param b
      */
     public void clickedGenre(Button b) {
-        update();
     }
 
 

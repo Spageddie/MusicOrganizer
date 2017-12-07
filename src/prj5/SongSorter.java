@@ -1,29 +1,34 @@
 package prj5;
 
 /**
- * Class to organize glyphs
+ * Class to organize song lists
  * 
  * @author Matthew Marquez (mmarquez)
- * @author Eddie Dean
  * @version 2017.11.16
  */
 public class SongSorter {
-    private LinkedList<Song> sortedTitle;
-    private LinkedList<Song> sortedArtist;
-    private LinkedList<Song> sortedGenre;
-    private LinkedList<Song> sortedYear;
-    private LinkedList<Song> songList;
     private DataHandler handler;
 
 
     /**
-     * Basic constructor for GlyphOrganizer
+     * Basic constructor for SongSorter
      */
+<<<<<<< HEAD
     public SongSorter() {
 
+=======
+    public SongSorter(DataHandler datahandler) {
+        handler = datahandler;
+>>>>>>> b6415af3eda6834ba8c8ee62e14292a4971f4412
     }
 
 
+    /**
+     * Sorts list of songs by title
+     * 
+     * @param songList
+     * @return songList sorted by title
+     */
     public LinkedList<Song> sortByTitle(LinkedList<Song> songList) {
         for (int i = 0; i < songList.size(); i++) {
             int min = i;
@@ -38,6 +43,12 @@ public class SongSorter {
     }
 
 
+    /**
+     * Sorts list of songs by artist
+     * 
+     * @param songList
+     * @return songList sorted by artist
+     */
     public LinkedList<Song> sortByArtist(LinkedList<Song> songList) {
         for (int i = 0; i < songList.size(); i++) {
             int min = i;
@@ -52,6 +63,12 @@ public class SongSorter {
     }
 
 
+    /**
+     * Sorts list of songs by genre
+     * 
+     * @param songList
+     * @return songList sorted by genre
+     */
     public LinkedList<Song> sortByGenre(LinkedList<Song> songList) {
         for (int i = 0; i < songList.size(); i++) {
             int min = i;
@@ -66,6 +83,12 @@ public class SongSorter {
     }
 
 
+    /**
+     * Sorts list of songs my year
+     * 
+     * @param songList
+     * @return songList sorted by year
+     */
     public LinkedList<Song> sortByYear(LinkedList<Song> songList) {
         for (int i = 0; i < songList.size(); i++) {
             int min = i;
@@ -77,6 +100,7 @@ public class SongSorter {
             songList.swap(min, i);
         }
         return songList;
+<<<<<<< HEAD
     }
 
 
@@ -97,9 +121,15 @@ public class SongSorter {
 
     public LinkedList<Song> getSortedYear() {
         return sortedYear;
+=======
+>>>>>>> b6415af3eda6834ba8c8ee62e14292a4971f4412
     }
 
 
+    /**
+     * Getter method for dataHandler
+     * @return handler
+     */
     public DataHandler getDataHandler() {
         return handler;
     }

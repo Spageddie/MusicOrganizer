@@ -4,7 +4,6 @@ package prj5;
  * Class that represents Glyph obects
  * 
  * @author Matthe Marquez (mmarquez)
- * @author Eddie Dean
  *
  */
 public class Glyph {
