@@ -5,7 +5,6 @@ import java.io.FileNotFoundException;
 /**
  * Class to run project
  * 
- * @author Eddie Dean
  * @author Matthew Marquez (mmarquez)
  * @version 2017.11.16
  *
