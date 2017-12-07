@@ -13,7 +13,6 @@ public class DataWindow {
     private LinkedList list;
     private LinkedList data;
     private DataHandler dataHandle;
-    private SongSorter songSort;
     private int songNum;
     private String by;
     private Window window;
@@ -255,7 +254,7 @@ public class DataWindow {
      */
     public void clickedArtist(Button b) {
         String choice = legend.getText();
-        list = songSort.sortByArtist(dataHandle.getSongList());
+        list = dataHandle.getSongList().sortByArtist(data);
         songNum = 0;
         previous.disable();
         next.enable();

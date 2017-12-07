@@ -6,7 +6,6 @@ import java.io.FileNotFoundException;
  * Does the calculations for the data
  * 
  * @author Matthew Marquez (mmarquez)
- * @version 12.06.2017
  * @version 2017.12.06
  *
  */

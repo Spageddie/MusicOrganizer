@@ -1,10 +1,19 @@
 package prj5;
 
+/**
+ * 
+ * @author Calvin Muramoto
+ *
+ * @param <T>
+ */
 public class LinkedList<T> {
     protected Node<T> head;
     private int size;
 
 
+    /**
+     * 
+     */
     public LinkedList() {
         head = null;
         size = 0;
@@ -223,7 +232,6 @@ public class LinkedList<T> {
                 current = current.next();
                 currentIndex++;
             }
-
             // if the element was never found, this also handles empty case
             throw new IndexOutOfBoundsException("Index is out of bounds");
         }
@@ -357,8 +365,62 @@ public class LinkedList<T> {
                 return true;
             }
         }
-
         return false;
     }
 
+
+    public LinkedList<Song> sortByTitle(LinkedList<Song> songList) {
+        for (int i = 0; i < songList.size(); i++) {
+            int min = i;
+            for (int j = i + 1; j < songList.size(); j++) {
+                if (songList.get(j).compareTitle(songList.get(min)) < 0) {
+                    min = j;
+                }
+            }
+            songList.swap(min, i);
+        }
+        return songList;
+    }
+
+
+    public LinkedList<Song> sortByArtist(LinkedList<Song> songList) {
+        for (int i = 0; i < songList.size(); i++) {
+            int min = i;
+            for (int j = i + 1; j < songList.size(); j++) {
+                if (songList.get(j).compareArtist(songList.get(min)) < 0) {
+                    min = j;
+                }
+            }
+            songList.swap(min, i);
+        }
+        return songList;
+    }
+
+
+    public LinkedList<Song> sortByGenre(LinkedList<Song> songList) {
+        for (int i = 0; i < songList.size(); i++) {
+            int min = i;
+            for (int j = i + 1; j < songList.size(); j++) {
+                if (songList.get(j).compareGenre(songList.get(min)) < 0) {
+                    min = j;
+                }
+            }
+            songList.swap(min, i);
+        }
+        return songList;
+    }
+
+
+    public LinkedList<Song> sortByYear(LinkedList<Song> songList) {
+        for (int i = 0; i < songList.size(); i++) {
+            int min = i;
+            for (int j = i + 1; j < songList.size(); j++) {
+                if (songList.get(j).compareYear(songList.get(min)) < 0) {
+                    min = j;
+                }
+            }
+            songList.swap(min, i);
+        }
+        return songList;
+    }
 }
