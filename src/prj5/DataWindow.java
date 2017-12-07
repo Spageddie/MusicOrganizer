@@ -40,16 +40,11 @@ public class DataWindow {
     private Shape heard1;
     private Shape heard2;
     private Shape heard3;
+    private Shape heard4;
     private Shape liked1;
     private Shape liked2;
     private Shape liked3;
-
-    private TextShape sTitle;
-    private TextShape sArtist;
-    private Shape r1;
-    private Shape r2;
-    private Shape r3;
-    private Shape r4;
+    private Shape liked4;
 
 
     /**
@@ -184,7 +179,7 @@ public class DataWindow {
      * 
      */
     private void drawGlyph() {
-        int n = songNum;
+        int n = 0;
         int height = 80;
         int width = 125;
         int barSpacingHeight = 150;
@@ -202,15 +197,17 @@ public class DataWindow {
         Color border = new Color(10, 10, 10);
 
         while (n < (songNum + 9) && n < songList.size()) {
-            if (n == (songNum + 3)) {
+            if (n == (songNum + 3) || n == (songNum + 6)) {
                 height += barSpacingHeight;
+                width = 125;
             }
+            Song temps1 = (Song)songList.get(n);
             // heard1 = songList.get(n);
 
             bar = new Shape(width, height, 5, 60, border);
             window.addShape(bar);
 
-            // String tempSubtitle = (Song)songList.get(n).getTitle();
+            // String tempTitle = (Song)songList.get(n).getTitle();
             // subtitle = new TextShape(50 + width, 100 + height, tempSubtitle);
             // subtitle.setBackgroundColor(Color.WHITE);
 
