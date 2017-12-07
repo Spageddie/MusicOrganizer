@@ -30,80 +30,97 @@ public class SongSorter {
         System.out.println(sortedGenre.toString());
         sortedYear = this.sortByYear(songList);
         System.out.println(sortedYear.toString());
-        
+
     }
+
+
     public LinkedList<Song> sortByTitle(LinkedList<Song> songList) {
-        for (int i=0; i<songList.size(); i++) {
+        for (int i = 0; i < songList.size(); i++) {
             int min = i;
-            for (int j= i+1; j<songList.size(); j++) {
-                if (songList.get(j).compareTitle(songList.get(min))<0) {
+            for (int j = i + 1; j < songList.size(); j++) {
+                if (songList.get(j).compareTitle(songList.get(min)) < 0) {
                     min = j;
                 }
             }
             songList.swap(min, i);
         }
-        //System.out.println("Title: ");
-        //System.out.println(sortedTitle.toString());
+        // System.out.println("Title: ");
+        // System.out.println(sortedTitle.toString());
         return songList;
     }
+
+
     public LinkedList<Song> sortByArtist(LinkedList<Song> songList) {
-        for (int i=0; i<songList.size(); i++) {
+        for (int i = 0; i < songList.size(); i++) {
             int min = i;
-            for (int j= i+1; j<songList.size(); j++) {
-                if (songList.get(j).compareArtist(songList.get(min))<0) {
+            for (int j = i + 1; j < songList.size(); j++) {
+                if (songList.get(j).compareArtist(songList.get(min)) < 0) {
                     min = j;
                 }
             }
             songList.swap(min, i);
         }
         return songList;
-        //System.out.println("Artist: ");
-        //System.out.println(sortedArtist.toString());
-       
+        // System.out.println("Artist: ");
+        // System.out.println(sortedArtist.toString());
+
     }
-    public LinkedList<Song> sortByGenre(LinkedList<Song> songList){
-        for (int i=0; i<songList.size(); i++) {
+
+
+    public LinkedList<Song> sortByGenre(LinkedList<Song> songList) {
+        for (int i = 0; i < songList.size(); i++) {
             int min = i;
-            for (int j= i+1; j<songList.size(); j++) {
-                if (songList.get(j).compareGenre(songList.get(min))<0) {
+            for (int j = i + 1; j < songList.size(); j++) {
+                if (songList.get(j).compareGenre(songList.get(min)) < 0) {
                     min = j;
                 }
             }
             songList.swap(min, i);
         }
         return songList;
-        //System.out.println("Genre: ");
-        //System.out.println(sortedGenre.toString());
+        // System.out.println("Genre: ");
+        // System.out.println(sortedGenre.toString());
     }
+
+
     public LinkedList<Song> sortByYear(LinkedList<Song> songList) {
-        for (int i=0; i<songList.size(); i++) {
+        for (int i = 0; i < songList.size(); i++) {
             int min = i;
-            for (int j= i+1; j<songList.size(); j++) {
-                if (songList.get(j).compareYear(songList.get(min))<0) {
+            for (int j = i + 1; j < songList.size(); j++) {
+                if (songList.get(j).compareYear(songList.get(min)) < 0) {
                     min = j;
                 }
             }
             songList.swap(min, i);
         }
         return songList;
-        //System.out.println("Year: ");
-        //System.out.println(sortedYear.toString());
+        // System.out.println("Year: ");
+        // System.out.println(sortedYear.toString());
     }
-    public LinkedList<Song> getSortedTitle(){
+
+
+    public LinkedList<Song> getSortedTitle() {
         return sortedTitle;
     }
-    public LinkedList<Song> getSortedArtist(){
+
+
+    public LinkedList<Song> getSortedArtist() {
         return sortedArtist;
     }
-    public LinkedList<Song> getSortedGenre(){
+
+
+    public LinkedList<Song> getSortedGenre() {
         return sortedGenre;
     }
-    public LinkedList<Song> getSortedYear(){
+
+
+    public LinkedList<Song> getSortedYear() {
         return sortedYear;
     }
+
+
     public DataHandler getDataHandler() {
         return handler;
     }
-    
 
 }
