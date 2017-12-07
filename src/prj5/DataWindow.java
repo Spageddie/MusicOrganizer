@@ -45,6 +45,14 @@ public class DataWindow {
     private Shape liked2;
     private Shape liked3;
     private Shape liked4;
+// private float percentHeard1;
+// private float percentHeard2;
+// private float percentHeard3;
+// private float percentHeard4;
+// private float percentLiked1;
+// private float percentLiked2;
+// private float percentLiked3;
+// private float percentLiked4;
 
 
     /**
@@ -93,18 +101,10 @@ public class DataWindow {
         quit = new Button("Quit");
         window.addButton(quit, WindowSide.SOUTH);
         quit.onClick(this, "clickedQuit");
+        
+        songList = dataHandle.getSongList();
 
         previous.disable();
-    }
-
-
-    /**
-     * Gets the window display
-     * 
-     * @return myWindow
-     */
-    public Window getWindow() {
-        return window;
     }
 
 
@@ -151,6 +151,16 @@ public class DataWindow {
 
 
     /**
+     * Gets the window display
+     * 
+     * @return myWindow
+     */
+    public Window getWindow() {
+        return window;
+    }
+
+
+    /**
      * Displays the hobby legend
      */
     private void displayLHobby() {
@@ -184,14 +194,15 @@ public class DataWindow {
         int width = 125;
         int barSpacingHeight = 150;
         int barSpacingWidth = 250;
-        int heard1 = 0;
-        int heard2 = 0;
-        int heard3 = 0;
-        int heard4 = 0;
-        int liked1 = 0;
-        int liked2 = 0;
-        int liked3 = 0;
-        int liked4 = 0;
+        double percentHeard1 = 0;
+        double percentHeard2 = 0;
+        double percentHeard3 = 0;
+        double percentHeard4 = 0;
+        double percentLiked1 = 0;
+        double percentLiked2 = 0;
+        double percentLiked3 = 0;
+        double percentLiked4 = 0;
+        //String sLegend = legend.getText();
 
         Color white = new Color(255, 255, 255);
         Color border = new Color(10, 10, 10);
@@ -202,14 +213,63 @@ public class DataWindow {
                 width = 125;
             }
             Song temps1 = (Song)songList.get(n);
-            // heard1 = songList.get(n);
+            // if (sLegend.equals("Hobby Legend")) {
+            percentHeard1 = temps1.getHeardPercentReading();
+            percentHeard2 = temps1.getHeardPercentArt();
+            percentHeard3 = temps1.getHeardPercentSports();
+            percentHeard4 = temps1.getHeardPercentMusic();
+            percentLiked1 = temps1.getLikePercentReading();
+            percentLiked2 = temps1.getLikePercentArt();
+            percentLiked3 = temps1.getLikePercentSports();
+            percentLiked4 = temps1.getLikePercentMusic();
+            // }
+            // if (sLegend.equals("Region Legend")) {
+            percentHeard1 = temps1.getHeardPercentSE();
+            percentHeard2 = temps1.getHeardPercentNE();
+            percentHeard3 = temps1.getHeardPercentUS();
+            percentHeard4 = temps1.getHeardPercentOut();
+            percentLiked1 = temps1.getLikePercentSE();
+            percentLiked2 = temps1.getLikePercentNE();
+            percentLiked3 = temps1.getLikePercentUS();
+            percentLiked4 = temps1.getLikePercentOut();
+            // }
+            // if (sLegend.equals("Major Legend")) {
+            percentHeard1 = temps1.getHeardPercentCS();
+            percentHeard2 = temps1.getHeardPercentEng();
+            percentHeard3 = temps1.getHeardPercentMath();
+            percentHeard4 = temps1.getHeardPercentOther();
+            percentLiked1 = temps1.getLikePercentCS();
+            percentLiked2 = temps1.getLikePercentEng();
+            percentLiked3 = temps1.getLikePercentMath();
+            percentLiked4 = temps1.getLikePercentOther();
+            // }
 
             bar = new Shape(width, height, 5, 60, border);
             window.addShape(bar);
 
-            // String tempTitle = (Song)songList.get(n).getTitle();
-            // subtitle = new TextShape(50 + width, 100 + height, tempSubtitle);
-            // subtitle.setBackgroundColor(Color.WHITE);
+            heard1 = new Shape(barSpacingWidth + width + 5, 50 + height,
+                (int)(125 * percentHeard1), 15, new Color(255, 51, 255));
+            heard2 = new Shape(barSpacingWidth + width + 5, 50 + height,
+                (int)(125 * percentHeard1), 15, new Color(51, 51, 255));
+            heard3 = new Shape(barSpacingWidth + width + 5, 50 + height,
+                (int)(125 * percentHeard1), 15, new Color(255, 153, 51));
+            heard4 = new Shape(barSpacingWidth + width + 5, 50 + height,
+                (int)(125 * percentHeard1), 15, new Color(51, 255, 51));
+            liked1 = new Shape(barSpacingWidth + width + 5, 50 + height,
+                (int)(125 * percentHeard1), 15, new Color(255, 51, 255));
+            liked2 = new Shape(barSpacingWidth + width + 5, 50 + height,
+                (int)(125 * percentHeard1), 15, new Color(51, 51, 255));
+            liked3 = new Shape(barSpacingWidth + width + 5, 50 + height,
+                (int)(125 * percentHeard1), 15, new Color(255, 153, 51));
+            liked4 = new Shape(barSpacingWidth + width + 5, 50 + height,
+                (int)(125 * percentHeard1), 15, new Color(51, 255, 51));
+
+            String tempTitle = temps1.getTitle();
+            title = new TextShape(50 + width, 10 + height, tempTitle);
+            title.setBackgroundColor(Color.WHITE);
+            String tempArtist = temps1.getArtist();
+            artist = new TextShape(50 + width, 100 + height, tempArtist);
+            artist.setBackgroundColor(Color.WHITE);
 
             width += barSpacingWidth;
             n++;
@@ -231,16 +291,16 @@ public class DataWindow {
             previous.disable();
         }
         if (sLegend.equals("Hobby Legend")) {
-            drawGlyph();
             displayLHobby();
+            drawGlyph();
         }
         if (sLegend.equals("Region Legend")) {
-            drawGlyph();
             displayLRegion();
+            drawGlyph();
         }
         if (sLegend.equals("Major Legend")) {
-            drawGlyph();
             displayLMajor();
+            drawGlyph();
         }
     }
 
@@ -259,16 +319,16 @@ public class DataWindow {
         }
         songNum += 9;
         if (sLegend.equals("Hobby Legend")) {
-            drawGlyph();
             displayLHobby();
+            drawGlyph();
         }
         if (sLegend.equals("Region Legend")) {
-            drawGlyph();
             displayLRegion();
+            drawGlyph();
         }
         if (sLegend.equals("Major Legend")) {
-            drawGlyph();
             displayLMajor();
+            drawGlyph();
         }
     }
 
@@ -400,6 +460,7 @@ public class DataWindow {
      */
     public void clickedHobby(Button b) {
         window.removeAllShapes();
+
         // songList = songList.sortBy(songList);
         drawGlyph();
         displayLHobby();
