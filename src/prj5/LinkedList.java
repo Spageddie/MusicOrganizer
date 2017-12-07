@@ -121,6 +121,7 @@ public class LinkedList<T> {
         }
 
         // other cases
+
         else {
             while (current.next() != null) {
                 current = current.next();
