@@ -61,7 +61,7 @@ public class Node<T> {
     /**
      * Sets the data for a node
      * 
-     * @param data
+     * @param anEntry
      *            the data you are putting in
      */
     public void setData(T anEntry) {

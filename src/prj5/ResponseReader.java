@@ -13,8 +13,6 @@ import java.io.FileNotFoundException;
  */
 public class ResponseReader {
 
-    private LinkedList<String> hasHeardList;
-    private LinkedList<String> doesLikeList;
     public static int NUMBER_OF_SONGS = 58;
     private LinkedList<Song> songList;
     private LinkedList<Response> responseList;

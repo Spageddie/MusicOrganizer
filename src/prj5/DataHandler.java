@@ -10,19 +10,27 @@ import java.io.FileNotFoundException;
  *
  */
 public class DataHandler {
-    private ResponseReader reader;
+
     private LinkedList<Song> songList;
     private LinkedList<Response> responseList;
 
+
     /**
      * Constructor for DataHandler
+     * 
+     * @param responsesFileName
+     *            file name of the responses survey
+     * @param songListFileName
+     *            file name of the songs
      */
     public DataHandler(String responsesFileName, String songListFileName)
         throws FileNotFoundException {
-        reader = new ResponseReader(responsesFileName, songListFileName);
+        ResponseReader reader = new ResponseReader(responsesFileName,
+            songListFileName);
         songList = reader.getSongList();
         responseList = reader.getResponseList();
     }
+
 
     /**
      * Method that uses helper method to add all percentages to a song
@@ -33,16 +41,20 @@ public class DataHandler {
         }
     }
 
+
     /**
      * Getter method for songList
+     * 
      * @return songList
      */
     public LinkedList<Song> getSongList() {
         return songList;
     }
 
+
     /**
      * Getter method for responseList
+     * 
      * @return responseList
      */
     public LinkedList<Response> getResponseList() {
@@ -53,7 +65,9 @@ public class DataHandler {
     /**
      * Finds percentages of all majors, regions, and hobbies for one song at
      * specified index
-     * @param the index of the song you are finding percentage of
+     * 
+     * @param songNumber
+     *            the index of the song you are finding percentage of
      */
     public void findPercentageOfSong(int songNumber) {
         double totalCS = 0;
@@ -92,7 +106,7 @@ public class DataHandler {
         int likeCountSports = 0;
         int likeCountArt = 0;
         int likeCountReading = 0;
-        //For every response
+        // For every response
         for (int i = 0; i < responseList.size(); i++) {
             String major = responseList.get(i).getMajor();
             String region = responseList.get(i).getRegion();

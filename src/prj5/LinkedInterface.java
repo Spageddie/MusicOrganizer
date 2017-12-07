@@ -20,12 +20,14 @@ public interface LinkedInterface<T> {
     public boolean isEmpty();
     /**
      * Adds an item to the list
-     * @param the generic you are adding to list
+     * @param anEntry
+     *      the generic you are adding to list
      */
     public void add(T anEntry);
     /**
      * Removes the specified item from the lsit
-     * @param the generic you are removing from list
+     * @param anEntry
+     *      the generic you are removing from list
      * @return the generic you removed
      */
     public T remove(T anEntry);

@@ -3,16 +3,20 @@ package prj5;
 /**
  * 
  * @author Calvin Muramoto
- *
+ * @author Matthew Marquez (mmarquez)
+ * @version 2017.12.07
  * @param <T>
  */
 public class LinkedList<T> {
-    protected Node<T> head;
+    /**
+     * Head node for a linkedList
+     */
+    private Node<T> head;
     private int size;
 
 
     /**
-     * 
+     * Linked List default constructor
      */
     public LinkedList() {
         head = null;
@@ -145,7 +149,9 @@ public class LinkedList<T> {
      * Swaps the data of two nodes
      * 
      * @param index1
+     *      first index you are swapping
      * @param index2
+     *      second index you are swapping
      */
     public void swap(int index1, int index2) {
         Node<T> firstNode = head;
@@ -313,29 +319,6 @@ public class LinkedList<T> {
 
 
     /**
-     * Returns an array representation of the list If a list contains A, B, and
-     * C, the following should be returned {A, B, C}, If a list
-     * contains A, B, C, and C the following should be returned {A, B, C, C}
-     *
-     * @return an array representing the list
-     */
-    public Object[] toArray() {
-
-        Object[] array = new Object[this.size()];
-
-        Node<T> current = head;
-        int count = 0;
-        while (current != null) {
-            array[count] = current.getData();
-            current = current.next();
-            count++;
-        }
-
-        return array;
-    }
-
-
-    /**
      * Returns true if both lists have the exact same contents
      * in the exact same order
      *
@@ -369,12 +352,17 @@ public class LinkedList<T> {
         return false;
     }
 
-
+    /**
+     * Sorts LinkedList<Song> by title
+     * @param songList
+     *      list you are sorting
+     * @return sorted list
+     */
     public LinkedList<Song> sortByTitle(LinkedList<Song> songList) {
         for (int i = 0; i < songList.size(); i++) {
             int min = i;
             for (int j = i + 1; j < songList.size(); j++) {
-                if (songList.get(j).compareTitle(songList.get(min)) < 0) {
+                if (songList.get(j).compareYear(songList.get(min)) < 0) {
                     min = j;
                 }
             }
@@ -383,7 +371,12 @@ public class LinkedList<T> {
         return songList;
     }
 
-
+    /**
+     * Sorts LinkedList<Song> by artist
+     * @param songList
+     *      list you are sorting
+     * @return sorted list
+     */
     public LinkedList<Song> sortByArtist(LinkedList<Song> songList) {
         for (int i = 0; i < songList.size(); i++) {
             int min = i;
@@ -397,7 +390,12 @@ public class LinkedList<T> {
         return songList;
     }
 
-
+    /**
+     * Sorts LinkedList<Song> by genre
+     * @param songList
+     *      list you are sorting
+     * @return sorted list
+     */
     public LinkedList<Song> sortByGenre(LinkedList<Song> songList) {
         for (int i = 0; i < songList.size(); i++) {
             int min = i;
@@ -411,12 +409,17 @@ public class LinkedList<T> {
         return songList;
     }
 
-
+    /**
+     * Sorts LinkedList<Song> by year
+     * @param songList
+     *      list you are sorting
+     * @return sorted list
+     */
     public LinkedList<Song> sortByYear(LinkedList<Song> songList) {
         for (int i = 0; i < songList.size(); i++) {
             int min = i;
             for (int j = i + 1; j < songList.size(); j++) {
-                if (songList.get(j).compareYear(songList.get(min)) < 0) {
+                if (songList.get(j).compareTitle(songList.get(min)) < 0) {
                     min = j;
                 }
             }

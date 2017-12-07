@@ -26,7 +26,7 @@ public class ResponseReaderTest extends TestCase {
      * Tests the readResponses() method
      */
     public void testReadResponses() {
-        System.out.println(reader.getResponseList().toString());
+        assertEquals(reader.getResponseList().get(0).getId(), "1");
     }
 
 
@@ -34,7 +34,6 @@ public class ResponseReaderTest extends TestCase {
      * Tests the readSongs() method
      */
     public void testReadSongs() {
-        System.out.println(reader.getSongList().toString());
         assertEquals(reader.getSongList().get(0).getTitle(),
             "All These Things I've Done");
     }
