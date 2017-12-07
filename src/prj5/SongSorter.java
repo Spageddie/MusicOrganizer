@@ -33,21 +33,23 @@ public class SongSorter {
         
     }
     public void sortByTitle() {
-        for (int i=0; i<songList.size(); i++) {
+        sortedTitle = songList;
+        //System.out.println(sortedTitle.toString());
+        for (int i=0; i<sortedTitle.size(); i++) {
             int min = i;
-            for (int j= 0; j<songList.size(); j++) {
-                if (songList.get(j).compareTitle(songList.get(min))<0) {
+            for (int j= i+1; j<sortedTitle.size(); j++) {
+                if (sortedTitle.get(j).compareTitle(sortedTitle.get(min))<0) {
                     min = j;
                 }
             }
-            songList.swap(min, i);
+            sortedTitle.swap(min, i);
         }
-        sortedTitle = songList;
     }
     public void sortByArtist() {
+        
         for (int i=0; i<songList.size(); i++) {
             int min = i;
-            for (int j= 0; j<songList.size(); j++) {
+            for (int j= i+1; j<songList.size(); j++) {
                 if (songList.get(j).compareArtist(songList.get(min))<0) {
                     min = j;
                 }
@@ -55,11 +57,12 @@ public class SongSorter {
             songList.swap(min, i);
         }
         sortedArtist = songList;
+       
     }
     public void sortByGenre() {
         for (int i=0; i<songList.size(); i++) {
             int min = i;
-            for (int j= 0; j<songList.size(); j++) {
+            for (int j= i+1; j<songList.size(); j++) {
                 if (songList.get(j).compareGenre(songList.get(min))<0) {
                     min = j;
                 }
@@ -71,7 +74,7 @@ public class SongSorter {
     public void sortByYear() {
         for (int i=0; i<songList.size(); i++) {
             int min = i;
-            for (int j= 0; j<songList.size(); j++) {
+            for (int j= i+1; j<songList.size(); j++) {
                 if (songList.get(j).compareYear(songList.get(min))<0) {
                     min = j;
                 }
@@ -91,6 +94,9 @@ public class SongSorter {
     }
     public LinkedList<Song> getSortedYear(){
         return sortedYear;
+    }
+    public DataHandler getDataHandler() {
+        return handler;
     }
     
 
