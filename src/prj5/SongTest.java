@@ -142,8 +142,6 @@ public class SongTest extends TestCase {
             + "Out Heard 0.4 Out Like 0.2 Music Heard 0.9 Music Like 0.8 "
             + "Sports Heard 0.7 Sports Like 0.6 Art Heard 0.2 Art Like 0.05 "
             + "Reading Heard 0.6 Reading Like 0.51";
-        System.out.println(song3.toString());
-        System.out.println(test);
         assertFalse(test.equals(song3.toString()));
     }
 }

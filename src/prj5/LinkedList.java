@@ -3,7 +3,8 @@ package prj5;
 /**
  * 
  * @author Calvin Muramoto
- *
+ * @author Matthew Marquez (mmarquez)
+ * @version 2017.12.07
  * @param <T>
  */
 public class LinkedList<T> {
@@ -369,7 +370,12 @@ public class LinkedList<T> {
         return false;
     }
 
-
+    /**
+     * Sorts LinkedList<Song> by title
+     * @param songList
+     *      list you are sorting
+     * @return sorted list
+     */
     public LinkedList<Song> sortByTitle(LinkedList<Song> songList) {
         for (int i = 0; i < songList.size(); i++) {
             int min = i;
@@ -383,7 +389,12 @@ public class LinkedList<T> {
         return songList;
     }
 
-
+    /**
+     * Sorts LinkedList<Song> by artist
+     * @param songList
+     *      list you are sorting
+     * @return sorted list
+     */
     public LinkedList<Song> sortByArtist(LinkedList<Song> songList) {
         for (int i = 0; i < songList.size(); i++) {
             int min = i;
@@ -397,7 +408,12 @@ public class LinkedList<T> {
         return songList;
     }
 
-
+    /**
+     * Sorts LinkedList<Song> by genre
+     * @param songList
+     *      list you are sorting
+     * @return sorted list
+     */
     public LinkedList<Song> sortByGenre(LinkedList<Song> songList) {
         for (int i = 0; i < songList.size(); i++) {
             int min = i;
@@ -411,7 +427,12 @@ public class LinkedList<T> {
         return songList;
     }
 
-
+    /**
+     * Sorts LinkedList<Song> by year
+     * @param songList
+     *      list you are sorting
+     * @return sorted list
+     */
     public LinkedList<Song> sortByYear(LinkedList<Song> songList) {
         for (int i = 0; i < songList.size(); i++) {
             int min = i;

@@ -3,7 +3,6 @@ package prj5;
 /**
  * Response object that represents the student's responses
  * 
- * @author Eddie Dean
  * @author Matthew Marquez (mmarquez)
  * @version 2017.11.16
  *
