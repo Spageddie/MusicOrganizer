@@ -29,9 +29,6 @@ public class Input {
 
         ResponseReader reader = new ResponseReader("MusicSurveyData.csv",
             "SongList.csv");
-        // MergeData merger = new MergeData(reader.getResponseList(),
-        // reader.getSongList());
-        // System.out.println(merger.getHobbyGlyphs());
         DataWindow datWin = new DataWindow(new DataHandler(
             "MusicSurveyData.csv", "SongList.csv"));
     }
