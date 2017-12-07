@@ -7,11 +7,13 @@ import student.TestCase;
  */
 public class SongTest extends TestCase{
     private Song song1;
+    private Song song2;
     /**
      * Sets up test cases
      */
     public void setUp() {
         song1 = new Song("Hi", "me", "1990", "gregorian chant");
+        song2 = new Song("BOO", "you", "2017", "rock");
     }
     /**
      * Tests getTitle() method
@@ -64,6 +66,18 @@ public class SongTest extends TestCase{
     public void testSetGenre(){
         song1.setGenre("Trashcan tapping");
         assertEquals("Trashcan tapping", song1.getGenre());
+    }
+    public void testCompareTitle() {
+        assertTrue(song1.compareTitle(song2)>0);
+    }
+    public void testCompareArtist() {
+        assertTrue(song1.compareArtist(song2)<0);
+    }
+    public void testCompareGenre() {
+        assertTrue(song1.compareGenre(song2)<0);
+    }
+    public void testCompareYear() {
+        assertTrue(song1.compareYear(song2)<0);
     }
     
 

@@ -12,16 +12,85 @@ public class SongSorter {
     private LinkedList<Song> sortedArtist;
     private LinkedList<Song> sortedGenre;
     private LinkedList<Song> sortedYear;
+    private LinkedList<Song> songList;
+    private DataHandler handler;
 
 
     /**
      * Basic constructor for GlyphOrganizer
      */
-    public SongSorter() {
+    public SongSorter(DataHandler datahandler) {
         sortedTitle = new LinkedList<Song>();
         sortedArtist = new LinkedList<Song>();
         sortedGenre = new LinkedList<Song>();
         sortedYear = new LinkedList<Song>();
+        handler = datahandler;
+        songList = handler.getSongList();
+        this.sortByTitle();
+        this.sortByArtist();
+        this.sortByGenre();
+        this.sortByYear();
+        
+    }
+    public void sortByTitle() {
+        for (int i=0; i<songList.size(); i++) {
+            int min = i;
+            for (int j= 0; j<songList.size(); j++) {
+                if (songList.get(j).compareTitle(songList.get(min))<0) {
+                    min = j;
+                }
+            }
+            songList.swap(min, i);
+        }
+        sortedTitle = songList;
+    }
+    public void sortByArtist() {
+        for (int i=0; i<songList.size(); i++) {
+            int min = i;
+            for (int j= 0; j<songList.size(); j++) {
+                if (songList.get(j).compareArtist(songList.get(min))<0) {
+                    min = j;
+                }
+            }
+            songList.swap(min, i);
+        }
+        sortedArtist = songList;
+    }
+    public void sortByGenre() {
+        for (int i=0; i<songList.size(); i++) {
+            int min = i;
+            for (int j= 0; j<songList.size(); j++) {
+                if (songList.get(j).compareGenre(songList.get(min))<0) {
+                    min = j;
+                }
+            }
+            songList.swap(min, i);
+        }
+        sortedGenre = songList;
+    }
+    public void sortByYear() {
+        for (int i=0; i<songList.size(); i++) {
+            int min = i;
+            for (int j= 0; j<songList.size(); j++) {
+                if (songList.get(j).compareYear(songList.get(min))<0) {
+                    min = j;
+                }
+            }
+            songList.swap(min, i);
+        }
+        sortedYear = songList;
+    }
+    public LinkedList<Song> getSortedTitle(){
+        return sortedTitle;
+    }
+    public LinkedList<Song> getSortedArtist(){
+        return sortedArtist;
+    }
+    public LinkedList<Song> getSortedGenre(){
+        return sortedGenre;
+    }
+    public LinkedList<Song> getSortedYear(){
+        return sortedYear;
     }
     
 

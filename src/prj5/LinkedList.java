@@ -119,6 +119,24 @@ public class LinkedList<T> {
         size++;
     }
     /**
+     * Swaps the data of two nodes
+     * @param index1
+     * @param index2
+     */
+    public void swap(int index1, int index2) {
+        Node<T> firstNode = head;
+        for (int i = 0; i < index1; i++) {
+            firstNode = firstNode.next();
+        }
+        Node<T> secondNode = head;
+        for (int i=0; i<index2; i++) {
+            secondNode = secondNode.next();
+        }
+        T data = firstNode.getData();
+        firstNode.setData(secondNode.getData());
+        secondNode.setData(data);
+    }
+    /**
      * Removes the first instance of the given object from the list
      *
      * @param obj

@@ -84,4 +84,8 @@ public class LinkedListTest extends TestCase{
     public void testEquals() {
         
     }
+    public void testSwap() {
+        listBinA.swap(0, 1);
+        System.out.println(listBinA.toString());
+    }
 }
