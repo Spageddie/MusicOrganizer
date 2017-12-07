@@ -10,10 +10,10 @@ import CS2114.*;
  *
  */
 public class DataWindow {
-    private LinkedList list;
+    private LinkedList infoList;
+    private LinkedList songList;
     private DataHandler dataHandle;
     private int songNum;
-    private String by;
     private Window window;
     private Button previous;
     private Button next;
@@ -53,11 +53,11 @@ public class DataWindow {
 
 
     /**
-     * GlyphOrganizer organizer
+     * 
      */
-    public DataWindow() {
-// dataSorter = organizer;
-// list = dataSorter.getHobby();
+    public DataWindow(DataHandler da) {
+        dataHandle = da;
+        songList = dataHandle.getSongList();
 
         window = new Window("Project5");
         window.setSize(900, 600);
@@ -99,7 +99,6 @@ public class DataWindow {
         window.addButton(quit, WindowSide.SOUTH);
         quit.onClick(this, "clickedQuit");
 
-        by = "by";
         previous.disable();
     }
 
@@ -186,8 +185,8 @@ public class DataWindow {
      */
     private void drawGlyph() {
         int n = songNum;
-        int height = 0;
-        int width = 0;
+        int height = 80;
+        int width = 125;
         int barSpacingHeight = 150;
         int barSpacingWidth = 250;
         int heard1 = 0;
@@ -202,62 +201,22 @@ public class DataWindow {
         Color white = new Color(255, 255, 255);
         Color border = new Color(10, 10, 10);
 
-        while (n < (songNum + 9)) {
+        while (n < (songNum + 9) && n < songList.size()) {
             if (n == (songNum + 3)) {
-                height += 150;
+                height += barSpacingHeight;
             }
-            bar = new Shape(125, 80, 5, 60, border);
+            // heard1 = songList.get(n);
+
+            bar = new Shape(width, height, 5, 60, border);
             window.addShape(bar);
 
-            window.addShape(bar);
+            // String tempSubtitle = (Song)songList.get(n).getTitle();
+            // subtitle = new TextShape(50 + width, 100 + height, tempSubtitle);
+            // subtitle.setBackgroundColor(Color.WHITE);
 
-            width += 250;
+            width += barSpacingWidth;
             n++;
         }
-    }
-
-
-    /**
-     * 
-     */
-    public void update() {
-        Color white = new Color(255, 255, 255);
-        Color border = new Color(10, 10, 10);
-
-        Shape pole1 = new Shape(125, 80, 5, 60, border);
-        window.addShape(pole1);
-        Shape pole2 = new Shape(125 + 250, 80, 5, 60, border);
-        window.addShape(pole2);
-        Shape pole3 = new Shape(125 + 2 * 250, 80, 5, 60, border);
-        window.addShape(pole3);
-        Shape pole4 = new Shape(125, 80 + 150, 5, 60, border);
-        window.addShape(pole4);
-        Shape pole5 = new Shape(125 + 250, 80 + 150, 5, 60, border);
-        window.addShape(pole5);
-        Shape pole6 = new Shape(125 + 2 * 250, 80 + 150, 5, 60, border);
-        window.addShape(pole6);
-        Shape pole7 = new Shape(125, 80 + 2 * 150, 5, 60, border);
-        window.addShape(pole7);
-        Shape pole8 = new Shape(125 + 250, 80 + 2 * 150, 5, 60, border);
-        window.addShape(pole8);
-        Shape pole9 = new Shape(125 + 2 * 250, 80 + 2 * 150, 5, 60, border);
-        window.addShape(pole9);
-
-        this.sTitle = new TextShape(75, 35, "Call Me Maybe");
-        sTitle.setBackgroundColor(white);
-        this.window.addShape(sTitle);
-        this.sArtist = new TextShape(60, 55, "by Carly Rae Jepsen");
-        sArtist.setBackgroundColor(white);
-        this.window.addShape(sArtist);
-        r1 = new Shape(50, 80, 145, 15, graphColors[0]);
-        this.window.addShape(r1);
-        r2 = new Shape(45, 95, 95, 15, graphColors[1]);
-        this.window.addShape(r2);
-        r3 = new Shape(55, 110, 120, 15, graphColors[2]);
-        this.window.addShape(r3);
-        r4 = new Shape(38, 125, 110, 15, graphColors[3]);
-        this.window.addShape(r4);
-
     }
 
 
@@ -269,8 +228,23 @@ public class DataWindow {
     public void clickedPrevious(Button b) {
         next.enable();
         window.removeAllShapes();
-
+        String sLegend = legend.getText();
         songNum -= 9;
+        if (songNum < 5) {
+            previous.disable();
+        }
+        if (sLegend.equals("Hobby Legend")) {
+            drawGlyph();
+            displayLHobby();
+        }
+        if (sLegend.equals("Region Legend")) {
+            drawGlyph();
+            displayLRegion();
+        }
+        if (sLegend.equals("Major Legend")) {
+            drawGlyph();
+            displayLMajor();
+        }
     }
 
 
@@ -282,8 +256,23 @@ public class DataWindow {
     public void clickedNext(Button b) {
         previous.enable();
         window.removeAllShapes();
-
+        String sLegend = legend.getText();
+        if (songNum > songList.size() - 12) {
+            next.disable();
+        }
         songNum += 9;
+        if (sLegend.equals("Hobby Legend")) {
+            drawGlyph();
+            displayLHobby();
+        }
+        if (sLegend.equals("Region Legend")) {
+            drawGlyph();
+            displayLRegion();
+        }
+        if (sLegend.equals("Major Legend")) {
+            drawGlyph();
+            displayLMajor();
+        }
     }
 
 
@@ -293,7 +282,27 @@ public class DataWindow {
      * @param b
      */
     public void clickedArtist(Button b) {
-
+        String sLegend = legend.getText();
+        songList = songList.sortByArtist(songList);
+        songNum = 0;
+        previous.disable();
+        next.enable();
+        window.removeAllShapes();
+        if (sLegend.equals("Hobby Legend")) {
+            // list = data.getHobbyList();
+            drawGlyph();
+            displayLHobby();
+        }
+        if (sLegend.equals("Region Legend")) {
+            // list = data.getHobbyList();
+            drawGlyph();
+            displayLRegion();
+        }
+        if (sLegend.equals("Major Legend")) {
+            // list = data.getHobbyList();
+            drawGlyph();
+            displayLMajor();
+        }
     }
 
 
@@ -303,7 +312,27 @@ public class DataWindow {
      * @param b
      */
     public void clickedTitle(Button b) {
-
+        String sLegend = legend.getText();
+        songList = songList.sortByTitle(songList);
+        songNum = 0;
+        previous.disable();
+        next.enable();
+        window.removeAllShapes();
+        if (sLegend.equals("Hobby Legend")) {
+            // list = data.getHobbyList();
+            drawGlyph();
+            displayLHobby();
+        }
+        if (sLegend.equals("Region Legend")) {
+            // list = data.getHobbyList();
+            drawGlyph();
+            displayLRegion();
+        }
+        if (sLegend.equals("Major Legend")) {
+            // list = data.getHobbyList();
+            drawGlyph();
+            displayLMajor();
+        }
     }
 
 
@@ -313,7 +342,27 @@ public class DataWindow {
      * @param b
      */
     public void clickedYear(Button b) {
-
+        String sLegend = legend.getText();
+        songList = songList.sortByYear(songList);
+        songNum = 0;
+        previous.disable();
+        next.enable();
+        window.removeAllShapes();
+        if (sLegend.equals("Hobby Legend")) {
+            // list = data.getHobbyList();
+            drawGlyph();
+            displayLHobby();
+        }
+        if (sLegend.equals("Region Legend")) {
+            // list = data.getHobbyList();
+            drawGlyph();
+            displayLRegion();
+        }
+        if (sLegend.equals("Major Legend")) {
+            // list = data.getHobbyList();
+            drawGlyph();
+            displayLMajor();
+        }
     }
 
 
@@ -323,7 +372,27 @@ public class DataWindow {
      * @param b
      */
     public void clickedGenre(Button b) {
-        update();
+        String sLegend = legend.getText();
+        songList = songList.sortByGenre(songList);
+        songNum = 0;
+        previous.disable();
+        next.enable();
+        window.removeAllShapes();
+        if (sLegend.equals("Hobby Legend")) {
+            // list = data.getHobbyList();
+            drawGlyph();
+            displayLHobby();
+        }
+        if (sLegend.equals("Region Legend")) {
+            // list = data.getHobbyList();
+            drawGlyph();
+            displayLRegion();
+        }
+        if (sLegend.equals("Major Legend")) {
+            // list = data.getHobbyList();
+            drawGlyph();
+            displayLMajor();
+        }
     }
 
 
@@ -334,6 +403,8 @@ public class DataWindow {
      */
     public void clickedHobby(Button b) {
         window.removeAllShapes();
+        // songList = songList.sortBy(songList);
+        drawGlyph();
         displayLHobby();
     }
 
@@ -345,6 +416,8 @@ public class DataWindow {
      */
     public void clickedMajor(Button b) {
         window.removeAllShapes();
+        // songList = songList.sortBy(songList);
+        drawGlyph();
         displayLMajor();
     }
 
@@ -356,6 +429,8 @@ public class DataWindow {
      */
     public void clickedRegion(Button b) {
         window.removeAllShapes();
+        // songList = songList.sortBy(songList);
+        drawGlyph();
         displayLRegion();
     }
 
