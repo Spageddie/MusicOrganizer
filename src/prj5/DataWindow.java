@@ -96,7 +96,12 @@ public class DataWindow {
 
         songList = dataHandle.getSongList();
 
+        next.disable();
         previous.disable();
+        titleSort.disable();
+        artistSort.disable();
+        yearSort.disable();
+        genreSort.disable();
     }
 
 
@@ -257,10 +262,10 @@ public class DataWindow {
                 (int)(125 * percentHeard1), 15, new Color(51, 255, 51));
 
             String tempTitle = temps1.getTitle();
-            title = new TextShape(50 + width, 10 + height, tempTitle);
+            title = new TextShape(width - 50, height - 40, tempTitle);
             title.setBackgroundColor(Color.WHITE);
             String tempArtist = temps1.getArtist();
-            artist = new TextShape(50 + width, 100 + height, tempArtist);
+            artist = new TextShape(width - 50, height - 20, tempArtist);
             artist.setBackgroundColor(Color.WHITE);
             window.addShape(title);
             window.addShape(artist);
@@ -437,17 +442,17 @@ public class DataWindow {
         next.enable();
         window.removeAllShapes();
         if (sLegend.equals("Hobby Legend")) {
-            // list = data.getHobbyList();
+            // songList = songList.sortBy(songList);
             drawGlyph();
             displayLHobby();
         }
         if (sLegend.equals("Region Legend")) {
-            // list = data.getHobbyList();
+            // songList = songList.sortBy(songList);
             drawGlyph();
             displayLRegion();
         }
         if (sLegend.equals("Major Legend")) {
-            // list = data.getHobbyList();
+            // songList = songList.sortBy(songList);
             drawGlyph();
             displayLMajor();
         }
@@ -465,6 +470,11 @@ public class DataWindow {
         // songList = songList.sortBy(songList);
         drawGlyph();
         displayLHobby();
+        next.enable();
+        titleSort.enable();
+        artistSort.enable();
+        yearSort.enable();
+        genreSort.enable();
     }
 
 
@@ -478,6 +488,11 @@ public class DataWindow {
         // songList = songList.sortBy(songList);
         drawGlyph();
         displayLMajor();
+        next.enable();
+        titleSort.enable();
+        artistSort.enable();
+        yearSort.enable();
+        genreSort.enable();
     }
 
 
@@ -491,6 +506,11 @@ public class DataWindow {
         // songList = songList.sortBy(songList);
         drawGlyph();
         displayLRegion();
+        next.enable();
+        titleSort.enable();
+        artistSort.enable();
+        yearSort.enable();
+        genreSort.enable();
     }
 
 
