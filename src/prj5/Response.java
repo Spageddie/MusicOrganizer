@@ -17,7 +17,14 @@ public class Response {
     private String region;
     private LinkedList<String> hasHeardSong;
     private LinkedList<String> likesSong;
-
+    /**
+     * Constructor for Response without the linkedLists parameters
+     * @param identification
+     * @param dateName
+     * @param majorName
+     * @param hobbyName
+     * @param regionName
+     */
     public Response(String identification,
         String dateName,
         String majorName,

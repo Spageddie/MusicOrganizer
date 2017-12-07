@@ -524,18 +524,46 @@ public class Song {
     public void setGenre(String genre) {
         this.genre = genre;
     }
+    /**
+     * Method that compares the titles of two songs
+     * @param other the song you are comparing
+     * @return integer, negative if less than, 
+     * 0 if equal, positive if greater than
+     */
     public int compareTitle(Song other) {
        return this.title.compareTo(other.getTitle());
     }
+    /**
+     * Method that compares the artist of two songs
+     * @param other the song you are comparing
+     * @return integer, negative if less than, 
+     * 0 if equal, positive if greater than
+     */
     public int compareArtist(Song other) {
        return this.artist.compareTo(other.getArtist());
     }
+    /**
+     * Method that compares the genre of two songs
+     * @param other the song you are comparing
+     * @return integer, negative if less than, 
+     * 0 if equal, positive if greater than
+     */
     public int compareGenre(Song other) {
         return this.genre.compareTo(other.getGenre());
     }
+    /**
+     * Method that compares the year of two songs
+     * @param other the song you are comparing
+     * @return integer, negative if less than, 
+     * 0 if equal, positive if greater than
+     */
     public int compareYear(Song other) {
         return this.year.compareTo(other.getYear());
     }
+    /**
+     * Represents the Song as a string
+     * @return string representation
+     */
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append(title+" ");

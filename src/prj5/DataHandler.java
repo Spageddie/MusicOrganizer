@@ -10,14 +10,13 @@ import java.io.FileNotFoundException;
  *
  */
 public class DataHandler {
-    /**
-     * Constructor for DataHandler
-     */
     private ResponseReader reader;
     private LinkedList<Song> songList;
     private LinkedList<Response> responseList;
 
-
+    /**
+     * Constructor for DataHandler
+     */
     public DataHandler(String responsesFileName, String songListFileName)
         throws FileNotFoundException {
         reader = new ResponseReader(responsesFileName, songListFileName);
@@ -25,19 +24,27 @@ public class DataHandler {
         responseList = reader.getResponseList();
     }
 
-
+    /**
+     * Method that uses helper method to add all percentages to a song
+     */
     public void updateSongs() {
         for (int i = 0; i < songList.size(); i++) {
             findPercentageOfSong(i);
         }
     }
 
-
+    /**
+     * Getter method for songList
+     * @return songList
+     */
     public LinkedList<Song> getSongList() {
         return songList;
     }
 
-
+    /**
+     * Getter method for responseList
+     * @return responseList
+     */
     public LinkedList<Response> getResponseList() {
         return responseList;
     }
@@ -46,6 +53,7 @@ public class DataHandler {
     /**
      * Finds percentages of all majors, regions, and hobbies for one song at
      * specified index
+     * @param the index of the song you are finding percentage of
      */
     public void findPercentageOfSong(int songNumber) {
         double totalCS = 0;
@@ -84,16 +92,7 @@ public class DataHandler {
         int likeCountSports = 0;
         int likeCountArt = 0;
         int likeCountReading = 0;
-        /*
-         * 1) For loop to traverse response list
-         * 2) Now at 1 response, find the major, region, and hobby
-         * 3) For loop to traverse the heard list
-         * 4) increment the count for the corresponding major, region, and hobby
-         * 5) For loop to traverse the like list
-         * 6) increment the count for the corresponding major, region, and hobby
-         * 7) Once all responses done add percentages to song
-         * 
-         */
+        //For every response
         for (int i = 0; i < responseList.size(); i++) {
             String major = responseList.get(i).getMajor();
             String region = responseList.get(i).getRegion();

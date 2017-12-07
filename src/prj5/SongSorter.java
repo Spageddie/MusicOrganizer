@@ -8,16 +8,17 @@ package prj5;
  */
 public class SongSorter {
     private DataHandler handler;
-
-
     /**
-     * Basic constructor for GlyphOrganizer
+     * Basic constructor for SongSorter
      */
     public SongSorter(DataHandler datahandler) {
-        
         handler = datahandler;
-        
     }
+    /**
+     * Sorts list of songs by title
+     * @param songList
+     * @return songList sorted by title
+     */
     public LinkedList<Song> sortByTitle(LinkedList<Song> songList) {
         for (int i=0; i<songList.size(); i++) {
             int min = i;
@@ -30,6 +31,11 @@ public class SongSorter {
         }
         return songList;
     }
+    /**
+     * Sorts list of songs by artist
+     * @param songList
+     * @return songList sorted by artist
+     */
     public LinkedList<Song> sortByArtist(LinkedList<Song> songList) {
         for (int i=0; i<songList.size(); i++) {
             int min = i;
@@ -42,6 +48,11 @@ public class SongSorter {
         }
         return songList;
     }
+    /**
+     * Sorts list of songs by genre
+     * @param songList
+     * @return songList sorted by genre
+     */
     public LinkedList<Song> sortByGenre(LinkedList<Song> songList){
         for (int i=0; i<songList.size(); i++) {
             int min = i;
@@ -54,6 +65,11 @@ public class SongSorter {
         }
         return songList;
     }
+    /**
+     * Sorts list of songs my year
+     * @param songList
+     * @return songList sorted by year
+     */
     public LinkedList<Song> sortByYear(LinkedList<Song> songList) {
         for (int i=0; i<songList.size(); i++) {
             int min = i;
@@ -66,6 +82,10 @@ public class SongSorter {
         }
         return songList;
     }
+    /**
+     * Getter method for dataHandler
+     * @return handler
+     */
     public DataHandler getDataHandler() {
         return handler;
     }

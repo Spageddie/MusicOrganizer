@@ -67,15 +67,27 @@ public class SongTest extends TestCase{
         song1.setGenre("Trashcan tapping");
         assertEquals("Trashcan tapping", song1.getGenre());
     }
+    /**
+     * Tests compareTitle() method
+     */
     public void testCompareTitle() {
         assertTrue(song1.compareTitle(song2)>0);
     }
+    /**
+     * Tests compareArtist() method
+     */
     public void testCompareArtist() {
         assertTrue(song1.compareArtist(song2)<0);
     }
+    /**
+     * Tests compareGenre() method
+     */
     public void testCompareGenre() {
         assertTrue(song1.compareGenre(song2)<0);
     }
+    /**
+     * Tests compareYear() method
+     */
     public void testCompareYear() {
         assertTrue(song1.compareYear(song2)<0);
     }
